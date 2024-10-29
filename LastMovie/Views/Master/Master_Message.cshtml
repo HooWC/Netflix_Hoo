@@ -1,0 +1,437 @@
+﻿@{
+	ViewData["Title"] = "Master_Message";
+	Layout = "Master_Layout";
+}
+
+<style>
+
+
+	body {
+		max-height: 80vh;
+	}
+
+	/* form */
+	input[type="button"] {
+		-webkit-apperance: none;
+		overflow: visible;
+		cursor: pointer
+	}
+
+	input[type="text"],
+	input[type="password"] {
+		font-size: 13px;
+		padding: 0 10px;
+		height: 25px;
+		line-height: 23px;
+		border: 1px solid #ddd;
+		color: #555;
+	}
+
+
+
+	.i-con2 {
+		width: 680px;
+		padding: 10px;
+	}
+
+
+	.w680 {
+		width: 680px
+	}
+
+	textarea {
+		border: 1px solid #ddd;
+		padding: 10px;
+		color: #555
+	}
+
+
+
+	/*기본테이블 스타일*/
+	.tbl-list {
+		width: 100%;
+		border-collapse: inherit;
+		border-spacing: 0;
+		border-top: 1px solid #0081c8;
+		border-left: 1px solid #ddd;
+		margin: 0 0 40px 0;
+		word-break: break-all;
+	}
+		/*170330 조창훈 수정*/
+		.tbl-list th,
+		.tbl-list td {
+			border-collapse: collapse;
+			border-spacing: 0;
+			border-right: 1px solid #ddd;
+			border-bottom: 1px solid #ddd;
+			border-top: none;
+			padding: 10px 0;
+			color: #555;
+			font-size: 13px;
+			line-height: 20px;
+			text-align: center;
+		}
+
+		.tbl-list th {
+			background: #fafafa;
+			font-family: 'Nanum Gothic', '나눔고딕', '맑은 고딕';
+			color: #333
+		}
+
+			.tbl-list th span {
+				font-weight: normal
+			}
+
+		.tbl-list .txt {
+			text-align: left;
+			padding: 10px 20px;
+		}
+
+		.tbl-list .txtTop {
+			text-align: left;
+			padding: 10px 20px;
+			vertical-align: top;
+		}
+
+		.tbl-list .data {
+			padding: 7px 20px 6px;
+		}
+
+		.tbl-list .dataTxt {
+			padding: 7px 20px 8px;
+			text-align: left
+		}
+
+		.tbl-list .agreeChk {
+			padding: 7px 20px 13px;
+			text-align: left;
+			line-height: 26px
+		}
+
+		.tbl-list .tit {
+			font-size: 15px;
+			font-family: 'NanumBarunGothic', '나눔바른고딕', 'Nanum Gothic', '나눔고딕', '맑은 고딕';
+			height: 30px;
+		}
+
+		.tbl-list .tit2 {
+			font-size: 15px;
+			font-family: 'NanumBarunGothic', '나눔바른고딕', 'Nanum Gothic', '나눔고딕', '맑은 고딕';
+			height: 30px;
+			text-align: left;
+			padding-left: 20px
+		}
+
+		.tbl-list .con {
+			padding: 20px 30px;
+			text-align: left;
+		}
+
+		.tbl-list .won {
+			text-align: right;
+			padding-right: 20px
+		}
+
+		.tbl-list .line td {
+			background: #fafafa
+		}
+
+		.tbl-list .lst_dot {
+			margin: 0 !important;
+			padding-left: 2rem;
+		}
+
+			.tbl-list .lst_dot.mt10 {
+				margin-top: 10px !important
+			}
+
+			.tbl-list .lst_dot li {
+				margin: 0 !important
+			}
+
+		.tbl-list .value {
+			vertical-align: middle;
+			font-family: Tahoma,dotum;
+			font-size: 25px;
+			color: #333;
+			font-weight: bold;
+			padding: 28px 0;
+			text-align: center
+		}
+
+			.tbl-list .value span {
+				font-size: 13px;
+				font-family: 'Nanum Gothic', '나눔고딕',dotum;
+				display: inline-block;
+				margin-left: 13px;
+				vertical-align: middle
+			}
+
+				.tbl-list .value span.up {
+					color: #d03e4b;
+				}
+
+				.tbl-list .value span.down {
+					color: #0054a6;
+				}
+
+		.tbl-list .btnArea {
+			margin: 7px 0 5px 0;
+		}
+
+		.tbl-list td.noLine {
+			border-right: none;
+		}
+
+		.tbl-list .resultTxt {
+			display: inline-block;
+			padding-left: 10px;
+			color: #0054a6;
+		}
+
+		.tbl-list .mb10 {
+			margin-bottom: 8px !important;
+		}
+
+		.tbl-list .mt10 {
+			margin-top: 6px !important;
+		}
+
+		.tbl-list td.sum {
+			background: #f4f9fc;
+		}
+
+		.tbl-list .pwMsg {
+			display: inline-block;
+			height: 30px;
+			line-height: 30px;
+			padding: 0 0 0 15px;
+			margin: 0 5px 0 20px;
+			font-size: 13px;
+			font-family: 'Nanum Gothic', '나눔고딕', '맑은 고딕';
+			background: url("../../img/bzw/join/bg_pwinfo.gif") no-repeat left top
+		}
+
+			.tbl-list .pwMsg span {
+				display: inline-block;
+				height: 30px;
+				line-height: 30px;
+				background: url("../../img/bzw/join/bg_pwinfo.gif") no-repeat right top;
+				padding: 0 15px 0 0
+			}
+
+		.tbl-list .pointR .pwMsg span {
+			color: #d03e4b
+		}
+
+		.tbl-list .dataTxt .referTxt {
+			margin-left: 0 !important
+		}
+
+		.tbl-list .tl {
+			padding-left: 15px;
+			text-align: left;
+		}
+		/* 180910 추가*/
+		.tbl-list .tc {
+			text-align: center !important
+		}
+	/* 190507 추가 */
+
+
+	.btnArea {
+		margin: 0 0 40px 0;
+		text-align: center;
+	}
+
+
+
+
+
+
+	.eduBtn .button.mainBtn span:after {
+		background-position: left -735px
+	}
+
+
+	.button.mainBtn, .button.mainBtn * {
+		height: 47px;
+		color: #fff !important;
+		line-height: 45px;
+	}
+
+
+	.menu_title {
+		padding: 2rem;
+	}
+
+	.helpGuide {
+		width: 100%;
+		text-align: center;
+	}
+
+
+	.frame {
+		width: 90%;
+		margin: 40px auto;
+		text-align: center;
+	}
+
+	button {
+		margin: 20px;
+	}
+
+	.custom-btn {
+		color: #fff;
+		border-radius: 5px;
+		padding: 10px 25px;
+		background: transparent;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		position: relative;
+		display: inline-block;
+		box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+		outline: none;
+	}
+
+
+	/* 11 */
+	.btn-11 {
+		border: none;
+		background: rgb(251,33,117);
+		background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%);
+		color: #fff;
+		overflow: hidden;
+	}
+
+		.btn-11:hover {
+			text-decoration: none;
+			color: #fff;
+		}
+
+		.btn-11:before {
+			position: absolute;
+			content: '';
+			display: inline-block;
+			top: -180px;
+			left: 0;
+			width: 30px;
+			height: 100%;
+			background-color: #fff;
+			animation: shiny-btn1 3s ease-in-out infinite;
+		}
+
+		.btn-11:hover {
+			opacity: .7;
+		}
+
+		.btn-11:active {
+			box-shadow: 4px 4px 6px 0 rgba(255,255,255,.3), -4px -4px 6px 0 rgba(116, 125, 136, .2), inset -4px -4px 6px 0 rgba(255,255,255,.2), inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+		}
+
+
+	@@-webkit-keyframes shiny-btn1 {
+		0% {
+			-webkit-transform: scale(0) rotate(45deg);
+			opacity: 0;
+		}
+
+		80% {
+			-webkit-transform: scale(0) rotate(45deg);
+			opacity: 0.5;
+		}
+
+		81% {
+			-webkit-transform: scale(4) rotate(45deg);
+			opacity: 1;
+		}
+
+		100% {
+			-webkit-transform: scale(50) rotate(45deg);
+			opacity: 0;
+		}
+	}
+</style>
+
+<div class="height">
+	<h4 class="menu_title">Message</h4>
+	<table class="tbl-list">
+		<colgroup>
+			<col width="20%">
+			<col width="80%">
+		</colgroup>
+		<tbody>
+
+			<tr>
+				<th class="txt" scope="row">
+					<label for="counselTitle">Title</label>
+				</th>
+				<td class="dataTxt">
+					<input type="text" id="counselTitle" maxlength="200" class="i-text w680 filter:require" onkeyup="textTitleCheck()" name="counselTitle" value="" lengthtype="length">
+				</td>
+			</tr>
+			<tr>
+				<th class="txt" scope="row">
+					<label for="massege">Content</label>
+				</th>
+				<td class="txt">
+					<textarea cols="10" rows="20" maxlength="500" class="i-con2 filter:require" id="massege" onkeyup="textCheck()" name="counselConts" lengthtype="length"></textarea>
+					<p class="mt10">(Now <strong class="pointB" id="textNow">0</strong> / Max 500byte)</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="helpGuide">
+		<p class="dot">
+			<i class="fa-solid fa-triangle-exclamation" style="color:red;"></i> Do not enter personal information such as social security number, account number, password, etc.
+		</p>
+	</div>
+
+	<div class="frame">
+		<button class="custom-btn btn-11" id="send">Send Message<div class="dot"></div></button>
+	</div>
+
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+	$(".mymessage").css({
+		"background":"red",
+		"border-radius":"5px"
+	});
+
+	$(function(){
+		$("#massege").keyup(function(){
+			$("#textNow").html($("#massege").val().length)
+		})
+
+		$("#send").click(function(){
+			if($("#massege").val() != "" && $("#counselTitle").val() != ""){
+
+				$.ajax({
+					type:"POST",
+					url:"/Ajax/Message_Post",
+					dataType:"json",
+					data:{
+						Title:$("#counselTitle").val(),
+						Message:$("#massege").val()
+					},
+					success:function(data){
+						if(data == true){
+							$("#massege").val("")
+							$("#counselTitle").val("")
+						}
+					}
+				})
+
+			}
+		})
+
+
+	})
+
+
+</script>

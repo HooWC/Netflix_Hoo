@@ -1,0 +1,1025 @@
+﻿@{
+	ViewData["Title"] = "Master_Add_Movie";
+	Layout = "Master_Layout";
+}
+
+<style>
+	body {
+		margin: 0;
+		height: 100%;
+		overflow: hidden;
+		width: 100% !important;
+		box-sizing: border-box;
+		font-family: 39, Roboto39, sans-serif;
+	}
+
+	.nav-sidebar .menu-is-opening > .nav-link i.right, .nav-sidebar .menu-is-opening > .nav-link svg.right, .nav-sidebar .menu-open > .nav-link i.right, .nav-sidebar .menu-open > .nav-link svg.right {
+		display: none;
+	}
+
+	.nav-sidebar .nav-item > .nav-link .right {
+		display: none;
+	}
+
+	.backRight {
+		position: absolute;
+		right: 0;
+		width: 50%;
+		height: 100%;
+		background: #03a9f4;
+	}
+
+	.backLeft {
+		position: absolute;
+		left: 0;
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+		/*  background: #673ab7; */
+	}
+
+		.backLeft .myimg {
+			position: relative;
+			font-size: 0.8rem;
+			border-radius: 5px;
+			margin: 1rem auto;
+			width: 640px;
+			height: 350px;
+			border: 2px solid black;
+			object-fit: cover;
+			background-size: cover;
+			background: transparent;
+		}
+
+			.backLeft .myimg #img {
+				position: absolute;
+				z-index: 20;
+				width: 100%;
+				height: 100%;
+				border-radius: 5px;
+				border: none;
+				cursor: pointer;
+			}
+
+			.backLeft .myimg #sub {
+				position: absolute;
+				margin-top: 150px;
+				margin-left: 5px;
+				padding: 8px 20px;
+				border-radius: 10px;
+				transition: all 0.3s;
+			}
+
+				.backLeft .myimg #sub:hover {
+					box-shadow: 0 0 20px lightcoral, 0 0 60px lightcoral;
+				}
+
+			.backLeft .myimg #myIcon {
+				position: absolute;
+				z-index: 30;
+				opacity: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 100%;
+				border: none;
+				cursor: pointer;
+				background: transparent;
+			}
+
+	#back {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		/*z-index: -999;*/
+	}
+
+	.canvas-back {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	#slideBox {
+		width: 50%;
+		max-height: 100%;
+		height: 100%;
+		overflow: hidden;
+		margin-left: 50%;
+		position: absolute;
+		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	}
+
+	.topLayer {
+		width: 200%;
+		height: 100%;
+		position: relative;
+		left: 0;
+		left: -100%;
+	}
+
+	.label {
+		font-size: 0.8em;
+		text-transform: uppercase;
+	}
+
+	.input {
+		background-color: transparent;
+		border: 0;
+		outline: 0;
+		font-size: 1em;
+		margin-top: 0.1em;
+		width: 60%;
+	}
+
+	.input2 {
+		width: 10%;
+	}
+
+	.slideBox .topLayer .right .content .flex {
+		display: flex;
+		/*width:100%;*/
+		width: 300px;
+		background: red;
+	}
+
+		.slideBox .topLayer .right .content .flex .flex1 {
+			display: flex;
+			flex-direction: column;
+			width: 300px;
+			background: red;
+		}
+
+	.left {
+		width: 50%;
+		height: 100%;
+		overflow: scroll;
+		background: #2c3034;
+		left: 0;
+		position: absolute;
+	}
+
+		.left .label {
+			color: #e3e3e3;
+		}
+
+		.left .input {
+			border-bottom: 1px solid #e3e3e3;
+			color: #e3e3e3;
+		}
+
+			.left .input:focus, .left .input:active {
+				border-color: #03a9f4;
+				color: #03a9f4;
+			}
+
+			.left .input:-webkit-autofill {
+				-webkit-box-shadow: 0 0 0 30px #2c3034 inset;
+				-webkit-text-fill-color: #e3e3e3;
+			}
+
+		.left a {
+			color: #03a9f4;
+		}
+
+	.right {
+		width: 50%;
+		height: 100%;
+		overflow: scroll;
+		background: #f9f9f9;
+		right: 0;
+		position: absolute;
+	}
+
+		.right .label {
+			color: #212121;
+		}
+
+		.right .input {
+			border-bottom: 1px solid #212121;
+		}
+
+			.right .input:focus, .right .input:active {
+				border-color: #673ab7;
+			}
+
+			.right .input:-webkit-autofill {
+				-webkit-box-shadow: 0 0 0 30px #f9f9f9 inset;
+				-webkit-text-fill-color: #212121;
+			}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100%;
+		width: 80%;
+		margin: 0 auto;
+		position: relative;
+	}
+
+		.content h2 {
+			font-weight: 300;
+			font-size: 2.6em;
+			margin: 0.2em 0 0.1em;
+		}
+
+	.left .content h2 {
+		color: #03a9f4;
+	}
+
+	.right .content h2 {
+		color: #673ab7;
+	}
+
+	.form-element {
+		/*margin: 1.6em 0;*/
+	}
+
+		.form-element.form-submit {
+			margin: 1.6em 0 0;
+		}
+
+	.form-stack {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.checkbox {
+		-webkit-appearance: none;
+		outline: none;
+		background-color: #e3e3e3;
+		border: 1px solid #e3e3e3;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+		padding: 12px;
+		border-radius: 4px;
+		display: inline-block;
+		position: relative;
+	}
+
+		.checkbox:focus, .checkbox:checked:focus, .checkbox:active, .checkbox:checked:active {
+			border-color: #03a9f4;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+		}
+
+		.checkbox:checked {
+			outline: none;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+		}
+
+			.checkbox:checked:after {
+				outline: none;
+				content: 39;
+				color: #03a9f4;
+				font-size: 1.4em;
+				font-weight: 900;
+				position: absolute;
+				top: -4px;
+				left: 4px;
+			}
+
+	.form-checkbox {
+		display: flex;
+		align-items: center;
+	}
+
+		.form-checkbox .label {
+			margin: 0 6px 0;
+			font-size: 0.72em;
+		}
+
+	button {
+		padding: 0.8em 1.2em;
+		margin: 0 10px 0 0;
+		width: auto;
+		font-weight: 600;
+		text-transform: uppercase;
+		font-size: 1em;
+		color: #fff;
+		line-height: 1em;
+		letter-spacing: 0.6px;
+		border-radius: 3px;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+		border: 0;
+		outline: 0;
+		transition: all 0.25s;
+	}
+
+		button.signup {
+			background: #03a9f4;
+		}
+
+		button.login {
+			background: #673ab7;
+		}
+
+		button.off {
+			background: none;
+			box-shadow: none;
+			margin: 0;
+		}
+
+			button.off.signup {
+				color: #03a9f4;
+			}
+
+			button.off.login {
+				color: #673ab7;
+			}
+
+		button:focus, button:active, button:hover {
+			box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+		}
+
+			button:focus.signup, button:active.signup, button:hover.signup {
+				background: #0288d1;
+			}
+
+			button:focus.login, button:active.login, button:hover.login {
+				background: #512da8;
+			}
+
+			button:focus.off, button:active.off, button:hover.off {
+				box-shadow: none;
+			}
+
+				button:focus.off.signup, button:active.off.signup, button:hover.off.signup {
+					color: #03a9f4;
+					background: #212121;
+				}
+
+				button:focus.off.login, button:active.off.login, button:hover.off.login {
+					color: #512da8;
+					background: #e3e3e3;
+				}
+
+	@@media only screen and (max-width: 768px) {
+		#slideBox {
+			width: 80%;
+			margin-left: 20%;
+		}
+
+		.signup-info, .login-info {
+			display: none;
+		}
+	}
+
+	.myselect {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 40%;
+		margin-top: 1rem;
+	}
+
+	.control__indicator {
+		position: absolute;
+		top: 2px;
+		left: 0;
+		background: #e6e6e6;
+	}
+
+	.control--radio .control__indicator {
+		border-radius: 50%;
+	}
+
+	.control:hover input ~ .control__indicator,
+	.control input:focus ~ .control__indicator {
+		background: #ccc;
+	}
+
+	.control input:checked ~ .control__indicator {
+		background: #2aa1c0;
+	}
+
+	.control:hover input:not([disabled]):checked ~ .control__indicator,
+	.control input:checked:focus ~ .control__indicator {
+		background: #0e647d;
+	}
+
+	.control input:disabled ~ .control__indicator {
+		background: #e6e6e6;
+		opacity: 0.6;
+		pointer-events: none;
+	}
+
+	.control__indicator:after {
+		content: '';
+		position: absolute;
+		display: none;
+	}
+
+	.control input:checked ~ .control__indicator:after {
+		display: block;
+	}
+
+	.control--checkbox {
+		margin-right: 0.5rem;
+	}
+
+		.control--checkbox .control__indicator:after {
+			left: 8px;
+			top: 4px;
+			width: 3px;
+			height: 8px;
+			border: solid #fff;
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg);
+		}
+
+		.control--checkbox input:disabled ~ .control__indicator:after {
+			border-color: #7b7b7b;
+		}
+
+	.control--radio .control__indicator:after {
+		left: 7px;
+		top: 7px;
+		height: 6px;
+		width: 6px;
+		border-radius: 50%;
+		background: #fff;
+	}
+
+	.control--radio input:disabled ~ .control__indicator:after {
+		background: #7b7b7b;
+	}
+
+
+	select {
+		border: 0;
+		box-shadow: none;
+		flex: 1;
+		padding: 0 1em;
+		background-image: none;
+		cursor: pointer;
+	}
+		/* Remove IE arrow */
+		select::-ms-expand {
+			display: none;
+		}
+	/* Custom Select wrapper */
+	.select {
+		margin-top: 0.5rem;
+		position: relative;
+		display: flex;
+		/*width: 10em;*/
+		width: 60%;
+		height: 2.5em;
+		border-radius: .25em;
+		overflow: hidden;
+	}
+		/* Arrow */
+		.select::after {
+			content: '\25BC';
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 0.5em;
+			background-color: #34495e;
+			transition: .25s all ease;
+			pointer-events: none;
+		}
+		/* Transition */
+		.select:hover::after {
+			color: #f39c12;
+		}
+
+
+
+
+
+
+
+
+	button:focus,
+	input:focus {
+		outline: none;
+		box-shadow: none;
+	}
+
+	a,
+	a:hover {
+		text-decoration: none;
+	}
+
+	body {
+		font-family: 'Roboto', sans-serif;
+	}
+
+	/* ---------------------- */
+	.imagePreview {
+		width: 90px;
+		height: 90px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		margin-right: 0;
+		position: absolute;
+		background-color: #fff;
+		top: 0;
+		left: 0;
+	}
+
+	.file-upload {
+		display: inline-block;
+	}
+
+	.file-select {
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+
+		.file-select.file-select-box {
+			width: 90px;
+			height: 90px;
+			display: inline-block;
+			border-radius: 14px;
+		}
+
+	.file-upload-custom-btn {
+		width: 90px;
+		height: 90px;
+		border: none;
+		background-color: #ed192412;
+		color: #ed1924;
+		font-size: 30px;
+		z-index: 1;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.file-select-name {
+		margin-left: 15px;
+	}
+
+	.file-select input[type=file] {
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.file-select.file-select-box input[type=file] {
+		z-index: 2;
+	}
+
+	.file-upload + .file-upload {
+		margin-left: 10px;
+	}
+
+</style>
+
+<form action="~/Master/Master_Add_Movie" method="post" enctype="multipart/form-data">
+	<div id="back">
+		<canvas id="canvas" class="canvas-back"></canvas>
+		<div class="backRight">
+		</div>
+		<div class="backLeft">
+			<div class="myimg">
+
+				<input class="input" id="myIcon" type="file" name="file" onchange="chooseImg(this)">
+				<img id="img" src="https://icon-library.com/images/add-image-icon-png/add-image-icon-png-17.jpg" onclick="myIcon.click()">
+
+			</div>
+
+
+			<section class="bg-diffrent">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="file-upload">
+								<div class="file-select file-select-box">
+									<div class="imagePreview"></div>
+									<button class="file-upload-custom-btn"><i class="fa fa-plus"></i></button>
+									<input type="file" name="file" class="profileimg">
+								</div>
+							</div>
+							<div class="file-upload">
+								<div class="file-select file-select-box">
+									<div class="imagePreview"></div>
+									<button class="file-upload-custom-btn"><i class="fa fa-plus"></i></button>
+									<input type="file" name="file" class="profileimg">
+								</div>
+							</div>
+							<div class="file-upload">
+								<div class="file-select file-select-box">
+									<div class="imagePreview"></div>
+									<button class="file-upload-custom-btn"><i class="fa fa-plus"></i></button>
+									<input type="file" name="file" class="profileimg">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div id="slideBox">
+		<div class="topLayer">
+			<div class="right">
+				<div class="content">
+					<input name="Category" id="CC" style="display:none;" />
+					<input name="Movie_ID" value="@ViewBag.ID" style="display:none;" />
+					<div>
+						<div class="form-element form-stack">
+							<label for="username-login" class="form-label label">Movie_ID</label>
+							<input class="input" id="username-login" type="text" value="@ViewBag.ID" name="username" disabled>
+						</div>
+						<div class="form-element form-stack">
+							<label for="username-login" class="form-label label">Movie Name</label>
+							<input class="input" id="MName" type="text" name="MovieName">
+						</div>
+						<div class="form-element form-stack">
+							<label for="username-login" class="form-label label">Movie Info</label>
+							<input class="input" id="Minfo" type="text" name="MovieInfo">
+						</div>
+						<div class="form-element form-stack">
+							<label for="username-login" class="form-label label">Movie Price</label>
+							<input class="input" id="Mprice" type="number" name="MoviePrice">
+						</div>
+						<div class="form-element form-stack">
+							<label for="username-login" class="form-label label">Movie Original Price</label>
+							<input class="input" id="Moprice" type="number" name="MovieDelPrice">
+						</div>
+						<div class="form-element form-stack">
+							<label for="username-login" class="form-label label">Quantity</label>
+							<input class="input" id="Mquan" type="number" name="Quantity">
+						</div>
+						<div class="form-element form-stack">
+							<label for="password-login" class="form-label label">YouTube Link</label>
+							<input class="input" id="MYoutube" type="text" name="Video">
+						</div>
+						<div class="select">
+							<select id="selectedIns" name="IsInstallmentProduct">
+								<option value="false">normal</option>
+								<option value="true">Installmeng</option>
+							</select>
+						</div>
+						<div class="myselect">
+							<label class="control control--checkbox">
+								Anime
+								<input type="checkbox" value="Anime" id="Anime" />
+								<div class="control__indicator"></div>
+							</label>
+							<label class="control control--checkbox">
+								Action
+								<input type="checkbox" value="Action" id="Action" />
+								<div class="control__indicator"></div>
+							</label>
+							<label class="control control--checkbox">
+								Comedy
+								<input type="checkbox" value="Comedy" id="Comedy" />
+								<div class="control__indicator"></div>
+							</label>
+							<label class="control control--checkbox">
+								Drama
+								<input type="checkbox" value="Drama" id="Drama" />
+								<div class="control__indicator"></div>
+							</label>
+							<label class="control control--checkbox">
+								History
+								<input type="checkbox" value="History" id="History" />
+								<div class="control__indicator"></div>
+							</label>
+							<label class="control control--checkbox">
+								Thriller
+								<input type="checkbox" value="Thriller" id="Thriller" />
+								<div class="control__indicator"></div>
+							</label>
+						</div>
+						<div class="form-element form-submit">
+							<button id="create" class="login" type="submit" name="login" disabled>Create</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+		var Mname = false;
+		var Minfo = false;
+		var Moprice = false;
+		var Mprice = false;
+		var Mquan = false;
+		var Yout = false;
+		var img = false;
+		var List = "";
+
+
+		$(".newproductpro").css({
+			"background":"red",
+			"border-radius":"5px"
+		});
+
+			$(function(){
+
+
+
+			$("#MName").keyup(function(){
+				console.log(List)
+				if($(this).val() == ""){
+					$(this).css("border","2px solid red")
+					Mname = false;
+				}else{
+					$(this).css("border","2px solid green")
+					Mname = true;
+				}
+				Ck()
+				//$("#saa").html(List)
+				//console.log("Mname "+Mname )
+				//console.log("Minfo "+Minfo )
+				//console.log("Moprice "+Moprice )
+				//console.log("Mprice "+Mprice )
+				//console.log("Mquan "+Mquan )
+				//console.log("yout " + Yout)
+				//console.log("img " + img)
+				//console.log(List)
+			})
+
+			$("#Minfo").keyup(function(){
+				if($(this).val() == ""){
+					$(this).css("border","2px solid red")
+					Minfo = false;
+				}else{
+					$(this).css("border","2px solid green")
+					Minfo = true;
+				}
+				Ck()
+			})
+
+			$("#Moprice").keyup(function(){
+				var n1 = $("#Moprice").val();
+				var m1 = parseInt(n1)
+				var n2 = $("#Mprice").val();
+				var m2 = parseInt(n2)
+				if($(this).val() == "" ){
+					$(this).css("border","2px solid red")
+					Moprice = false;
+				}else if(m1 < m2){
+					$(this).css("border","2px solid red")
+					Moprice = false;
+				}
+				else{
+					$(this).css("border","2px solid green")
+					Moprice = true;
+				}
+				Ck()
+			})
+
+			$("#Mprice").keyup(function(){
+				var n1 = $("#Moprice").val();
+				var m1 = parseInt(n1)
+				var n2 = $("#Mprice").val();
+				var m2 = parseInt(n2)
+				if($(this).val() == ""){
+					$(this).css("border","2px solid red")
+					Mprice = false;
+				}else if(m1 < m2){
+					$(this).css("border","2px solid red")
+					Mprice = false;
+				}else{
+					$(this).css("border","2px solid green")
+					Mprice = true;
+				}
+				Ck()
+			})
+
+			$("#Mquan").keyup(function(){
+				if($(this).val() == ""){
+					$(this).css("border","2px solid red")
+					Mquan = false;
+				}else{
+					$(this).css("border","2px solid green")
+					Mquan = true;
+				}
+				Ck()
+			})
+
+			$("#http").keyup(function(){
+				if($(this).val() == ""){
+					$(this).css("border","2px solid red")
+					http = false;
+				}else{
+					$(this).css("border","2px solid green")
+					http = true;
+				}
+				Ck()
+			})
+
+			$("#MYoutube").keyup(function(){
+				var x = $(this).val();
+				if($(this).val() == ""){
+					$(this).css("border","2px solid red")
+					Yout = false;
+				}else{
+					if(x.includes("https://www.youtube.com/embed"))
+					{
+						$(this).css("border","2px solid green")
+						Yout = true;
+					}
+					else
+					{
+						$(this).css("border","2px solid red")
+						Yout = false;
+					}
+				}
+				Ck()
+			})
+
+			$("#Anime").change(function(){
+				var x = document.getElementById("Anime")
+				if(x.checked){
+					$("#Anime").prop("checked",true)
+					List += $("#Anime").val() + ", ";
+				}else{
+					$("#Anime").prop("checked",false)
+					List = List.replace("Anime, ","");
+				}
+				Ck()
+			})
+
+			$("#Action").change(function(){
+				var x = document.getElementById("Action")
+				if(x.checked){
+					$("#Action").prop("checked",true)
+					List += $("#Action").val() + ", ";
+				}else{
+					$("#Action").prop("checked",false)
+					List = List.replace("Action, ","");
+				}
+				Ck()
+			})
+
+			$("#Comedy").change(function(){
+				var x = document.getElementById("Comedy")
+				if(x.checked){
+					$("#Comedy").prop("checked",true)
+					List += $("#Comedy").val() + ", ";
+				}else{
+					$("#Comedy").prop("checked",false)
+					List = List.replace("Comedy, ","");
+				}
+				Ck()
+			})
+
+			$("#Drama").change(function(){
+				var x = document.getElementById("Drama")
+				if(x.checked){
+					$("#Drama").prop("checked",true)
+					List += $("#Drama").val() + ", ";
+				}else{
+					$("#Drama").prop("checked",false)
+					List = List.replace("Drama, ","");
+				}
+				Ck()
+			})
+
+			$("#History").change(function(){
+				var x = document.getElementById("History")
+				if(x.checked){
+					$("#History").prop("checked",true)
+					List += $("#History").val() + ", ";
+				}else{
+					$("#History").prop("checked",false)
+					List = List.replace("History, ","");
+				}
+				Ck()
+			})
+
+			$("#Thriller").change(function(){
+				var x = document.getElementById("Thriller")
+				if(x.checked){
+					$("#Thriller").prop("checked",true)
+					List += $("#Thriller").val() + ", ";
+				}else{
+					$("#Thriller").prop("checked",false)
+					List = List.replace("Thriller, ","");
+				}
+				Ck()
+			})
+
+			$("#Done").click(function(){
+				$.ajax({
+					type:"POST",
+					url:"/Ajax/Seller_Create_Product",
+					dataType:"json",
+					data:{
+						Movie_ID:$("#Mid").val(),
+						MovieImg:$("#http").val(),
+						MovieName:$("#MName").val(),
+						MovieInfo:$("#Minfo").val(),
+						MoviePrice:$("#Mprice").val(),//低
+						MovieDelPrice:$("#Moprice").val(),//原本高
+						IsInstallmentProduct:$("#selectedIns").val(),
+						Quantity:$("#Mquan").val(),
+						Category:List,
+						Video:$("#MYoutube").val()
+					},
+					success:function(data){
+						if(data == true){
+							window.location.href="/Loading/Loading_Login_Seller_AddSuccess";
+						}
+					}
+				})
+			})
+
+			$("#myIcon").change(function(){
+				var file = $("input[type=file]").get(0).files[0];
+
+				if(file){
+					img = true;
+				}else{
+					img = false;
+				}
+				console.log(img);
+				Ck()
+
+			})
+
+
+		})
+
+		function Ck(){
+			if(Mname == false || Minfo == false || Moprice == false || Mprice == false || Mquan == false
+				 || Yout == false || img == false || List == "")
+			{
+				$("#create").prop("disabled",true);
+				$("#create").css("background","#673ab7");
+				$("#CC").val(List)
+			}
+			else if(Mname == true && Minfo == true && Moprice == true && Mprice == true && Mquan == true &&
+				 Yout == true && img == true && List != "")
+			{
+				$("#create").prop("disabled",false);
+				$("#create").css("background","red");
+				$("#CC").val(List)
+			}
+		}
+
+		function chooseImg(file){
+			var file = file.files[0]
+
+			var reader = new FileReader();
+
+			reader.readAsDataURL(file);
+
+			reader.onload = function(){
+				var img = document.getElementById("img");
+				img.src = this.result;
+			};
+		}
+
+		// -------------file-selection-with-image-and-name------------
+	$(document).ready(function() {
+		$(document).on('change', '.file-upload input[type="file"]', function() {
+				var filename = $(this).val();
+				if (/^\s*$/.test(filename)) {
+						$(this).parents(".file-upload").removeClass('active');
+						$(this).parents(".file-upload").find(".file-select-name").text("No file chosen...");
+				} else {
+						$(this).parents(".file-upload").addClass('active');
+						$(this).parents(".file-upload").find(".file-select-name").text(filename.substring(filename.lastIndexOf("\\") + 1, filename.length));
+				}
+				var uploadFile = $(this);
+				var files = !!this.files ? this.files : [];
+				if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+				if (/^image/.test(files[0].type)) { // only image file
+						var reader = new FileReader(); // instance of the FileReader
+						reader.readAsDataURL(files[0]); // read the local file
+
+						reader.onloadend = function() { // set image data as background of div
+								uploadFile.closest(".file-upload").find('.imagePreview').css({"background-image": "url(" + this.result + ")", "z-index": "2"});
+						}
+				}
+		});
+	});
+
+
+
+
+
+
+
+</script>
+

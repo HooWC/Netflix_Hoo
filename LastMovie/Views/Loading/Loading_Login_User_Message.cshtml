@@ -1,0 +1,28 @@
+﻿@{
+	ViewData["Title"] = "Loading_Login_User_Message";
+	Layout = "Loading_Layout";
+}
+
+<div id="load">
+	<div>G</div>
+	<div>N</div>
+	<div>I</div>
+	<div>D</div>
+	<div>A</div>
+	<div>O</div>
+	<div>L</div>
+</div>
+
+
+<script>
+	 function countDown(){
+
+		window.location.href="/User/User_Message";
+
+	}
+
+	//1000毫秒调用一次
+	window.setInterval("countDown()",5000);
+</script>
+
+

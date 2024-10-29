@@ -1,0 +1,581 @@
+﻿@model Tr
+
+@{
+	ViewData["Title"] = "User_Tr_Page_View";
+	Layout = null;
+}
+
+<html>
+<head>
+	<style>
+		* {
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: #111;
+		}
+
+		.row_poster {
+			width: 100%;
+			object-fit: contain;
+			max-height: 100px;
+			margin-right: 10px;
+			transition: transform 450ms;
+		}
+
+			.row_poster:hover {
+				transform: scale(1.1);
+			}
+
+		.row_posters {
+			display: flex;
+			overflow-y: hidden;
+			overflow-x: scroll;
+			padding: 20px;
+		}
+
+			.row_posters::-webkit-scrollbar {
+				display: none;
+			}
+
+		.row_posterLarge {
+			max-height: 200px;
+		}
+
+		.row {
+			color: antiquewhite;
+			margin-left: 20px;
+		}
+
+		.banner {
+			background-image: url("https://occ-0-1841-58.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABYan7_IY1kIqWXB9TiMfF1LnhQY_8T_tfNHUXRLZqvmamje_qNaudlZkX8JJsEdU_-QE_knEtjEFe8YclKJjclUdsJb8W0xXyTQK.jpg?r=3c9");
+			width: 100%;
+			background-size: cover;
+			background-position: center center;
+			object-fit: contain;
+			height: 448px;
+			color: azure;
+			margin-bottom: 2rem;
+		}
+
+		.banner_contents {
+			margin-left: 30px;
+			padding: 144px;
+			height: 190px;
+		}
+
+		.banner_title {
+			font-size: 3rem;
+			font-weight: 800;
+			padding-bottom: 0.3rem;
+		}
+
+		.banner_discription {
+			width: 45rem;
+			line-height: 1.3;
+			padding-top: 1rem;
+			font-size: .8rem;
+			max-width: 360px;
+			height: 180px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.banner_button {
+			cursor: pointer;
+			color: azure;
+			outline: none;
+			border: none;
+			padding-top: .6rem;
+			padding-bottom: .4rem;
+			margin: .2rem;
+			font-weight: 700;
+			border-radius: 5px;
+			background-color: rgba(51, 51, 51, .5);
+		}
+
+			.banner_button:hover {
+				color: #000;
+				background-color: #e6e6e6;
+				transition: all 0.5s;
+			}
+
+		.nav2_logo {
+			width: 80px;
+			object-fit: contain;
+			cursor: pointer;
+		}
+
+		.nav2_avatar {
+			width: 30px;
+			object-fit: contain;
+			cursor: pointer;
+		}
+
+		.nav2 {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			padding: 20px;
+			z-index: 1;
+			transition-timing-function: ease-in;
+			transition: all 0.5s;
+		}
+
+		.nav2_black {
+			background-color: #111;
+		}
+
+		a {
+			color: azure;
+			text-decoration: none;
+		}
+
+			a:hover {
+				cursor: pointer;
+				color: black;
+				transition: all 0.5s;
+			}
+
+		.Mybackground {
+			background-color: #111;
+			padding: 0rem;
+		}
+
+
+
+		:root {
+			--background-color-gs-product-grid-view: #101827;
+			--product-column-gap-gs-product-grid-view: 10px;
+			--product-row-gap-gs-product-grid-view: 10px;
+			--product-container-padding-product-grid-view: 20px;
+			--product-card-color-gs-product-grid-view: #1d283c;
+			--product-card-border-radius-gs-product-grid-view: 5px;
+			--product-card-content-padding-gs-product-grid-view: 10px;
+			--product-card-scale-on-hover-gs-product-grid-view: 1.03;
+			--product-card-transition-gs-product-grid-view: 0.3s;
+			--product-card-header-color-gs-product-grid-view: white;
+			--product-card-header-padding-color-gs-product-grid-view: 20px 0px 10px 0px;
+			--product-card-header-font-gs-product-grid-view: 18px;
+			--product-card-detail-title-color-gs-product-grid-view: #9da1aa;
+			--product-card-detail-font-size-gs-product-grid-view: 13px;
+			--product-card-detail-value-color-gs-product-grid-view: white;
+			--product-overlay-background-color-gs-product-grid-view: #8080809c;
+			--product-overlay-text-color-gs-product-grid-view: white;
+			--product-overlay-background-color-hover-gs-product-grid-view: grey;
+			--product-card-scrollbar-color-gs-product-grid-view: #0a0f18;
+			--product-card-scrollbar-color-hover-gs-product-grid-view: black;
+			--product-card-image-height-hover-gs-product-grid-view: 150px;
+		}
+
+		* {
+			margin: 0;
+		}
+
+		.my_turn {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+
+			.my_turn .gs-product-card {
+				/*width: 100%;*/
+				/*min-width: 260px;*/
+				width: 260px;
+				background-color: var(--product-card-color-gs-product-grid-view);
+				min-height: 400px;
+				max-height: 400px;
+				border-radius: var(--product-card-border-radius-gs-product-grid-view);
+				transition: var(--product-card-transition-gs-product-grid-view) ease-in-out;
+				display: block;
+				text-decoration: none;
+				cursor: pointer;
+				overflow-y: auto;
+			}
+
+				.my_turn .gs-product-card:hover {
+					transform: scale(var(--product-card-scale-on-hover-gs-product-grid-view));
+				}
+
+				.my_turn .gs-product-card .gs-product-card-content {
+					padding: var(--product-card-content-padding-gs-product-grid-view);
+					position: relative;
+				}
+
+				.my_turn .gs-product-card .gs-product-card-image-container {
+					width: 100%;
+					height: var(--product-card-image-height-hover-gs-product-grid-view);
+					overflow: hidden;
+					border-radius: var(--product-card-border-radius-gs-product-grid-view);
+				}
+
+					.my_turn .gs-product-card .gs-product-card-image-container .gs-product-card-image {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+
+				.my_turn .gs-product-card .gs-product-card-content .gs-product-card-name {
+					color: var(--product-card-header-color-gs-product-grid-view);
+					padding: var(--product-card-header-padding-color-gs-product-grid-view);
+					font-size: var(--product-card-header-font-gs-product-grid-view);
+				}
+
+				.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail {
+					display: flex;
+					justify-content: space-between;
+					font-size: var(--product-card-detail-font-size-gs-product-grid-view);
+				}
+
+					.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail .no {
+						color: #59719d;
+						background-color: rgba(89, 113, 157, 0.2);
+					}
+
+						.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail .no:before {
+							background-color: #59719d;
+						}
+
+					.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail .yes {
+						color: #2ba972;
+						background-color: rgba(43, 169, 114, 0.2);
+					}
+
+						.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail .yes:before {
+							background-color: #2ba972;
+						}
+
+		@@media only screen and (min-width: 320px) {
+			.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail {
+				display: block;
+			}
+		}
+
+		@@media only screen and (min-width: 540px) {
+			.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail {
+				display: block;
+			}
+		}
+
+		@@media only screen and (min-width: 800px) {
+			.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail {
+				display: flex;
+			}
+		}
+
+		.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail .gs-product-card-detail-title {
+			color: var(--product-card-detail-title-color-gs-product-grid-view);
+			min-width: 50%;
+		}
+
+		.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail .gs-product-card-detail-value {
+			color: var(--product-card-detail-value-color-gs-product-grid-view);
+			min-width: 50%;
+			text-align: left;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail .mystatus {
+			color: var(--product-card-detail-value-color-gs-product-grid-view);
+			min-width: 50%;
+			text-align: left;
+			border-radius: 4px;
+			display: flex;
+			align-items: center;
+			padding: 4px 8px;
+			font-size: 12px;
+		}
+
+
+			.my_turn .gs-product-card .gs-product-card-content .gs-product-card-detail .mystatus:before {
+				content: 39;
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				margin-right: 4px;
+			}
+
+		.my_turn .gs-product-card .gs-product-card-content .gs-product-card-product-type {
+			position: absolute;
+			top: calc(var(--product-card-content-padding-gs-product-grid-view) + 2px);
+			left: calc(var(--product-card-content-padding-gs-product-grid-view) + 2px);
+			padding: 0px 5px;
+			background-color: var(--product-overlay-background-color-gs-product-grid-view);
+			border-radius: 3px;
+			font-size: 10px;
+			color: var(--product-overlay-text-color-gs-product-grid-view);
+		}
+
+			.my_turn .gs-product-card .gs-product-card-content .gs-product-card-product-type:hover {
+				background-color: var(--product-overlay-background-color-hover-gs-product-grid-view);
+			}
+
+		.my_turn .gs-product-card .gs-product-card-content .gs-product-card-save {
+			position: absolute;
+			top: calc(var(--product-card-content-padding-gs-product-grid-view) + 2px);
+			right: calc(var(--product-card-content-padding-gs-product-grid-view) + 2px);
+			padding: 0px 5px;
+		}
+
+			.my_turn .gs-product-card .gs-product-card-content .gs-product-card-save svg {
+				fill: var(--product-overlay-background-color-gs-product-grid-view);
+				stroke: white;
+				stroke-width: 0.5px;
+				stroke-linejoin: round;
+			}
+
+			.my_turn .gs-product-card .gs-product-card-content .gs-product-card-save:hover svg {
+				fill: var(--product-overlay-background-color-hover-gs-product-grid-view);
+			}
+
+			.my_turn .gs-product-card .gs-product-card-content .gs-product-card-save.gs-saved svg {
+				fill: var(--product-card-color-gs-product-grid-view);
+			}
+
+			.my_turn .gs-product-card .gs-product-card-content .gs-product-card-save.gs-saved:hover svg {
+				fill: var(--background-color-gs-product-grid-view);
+			}
+
+		.my_turn .gs-product-card::-webkit-scrollbar {
+			width: 5px;
+			height: 5px;
+		}
+
+		.my_turn .gs-product-card::-webkit-scrollbar-track {
+			background: transparent;
+			border-radius: 5px;
+		}
+
+		.my_turn .gs-product-card::-webkit-scrollbar-thumb {
+			background: var(--product-card-scrollbar-color-gs-product-grid-view);
+			border-radius: 5px;
+		}
+
+			.my_turn .gs-product-card::-webkit-scrollbar-thumb:hover {
+				background: var(--product-card-scrollbar-color-hover-gs-product-grid-view);
+			}
+
+
+
+		.row_posters_my .flex {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 2rem;
+		}
+
+			.row_posters_my .flex .my_turn {
+				margin: 1rem;
+			}
+
+		.row .flex {
+			display: flex;
+			font-size: 1rem;
+			padding: 2rem;
+		}
+
+			.row .flex .f1 {
+				flex: 5%;
+			}
+
+			.row .flex .f2 {
+				flex: 60%;
+			}
+
+		.my_box {
+			width: 90%;
+			margin: 1rem auto;
+			text-align: center;
+		}
+
+			.my_box .m2 {
+				width: 140px;
+			}
+
+		.my_box2 {
+			width: 90%;
+			margin: 2rem auto;
+		}
+
+		.row_posters_my {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.btn {
+			display: flex;
+			margin-bottom: 3rem;
+		}
+
+			.btn .b1 {
+				padding: 8px 40px;
+				border-radius: 2px;
+				background: red;
+				color: white;
+				border: none;
+				margin-top: 2rem;
+				transition: all 0.3s;
+				margin: 1rem;
+				text-decoration: none;
+			}
+
+			.btn .b2 {
+				font-size: 1rem;
+			}
+
+			.btn .b1:hover {
+				box-shadow: 0 0 20px coral, 0 0 60px coral;
+			}
+
+	</style>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="~/AdminTLE/plugins/fontawesome-free/css/all.min.css">
+	<!-- IonIcons -->
+	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<body>
+
+	<div class="my_box">
+		<img class="m2" src="https://1000logos.net/wp-content/uploads/2017/05/Netflix-Logo.png" />
+	</div>
+
+	<div class="my_box2">
+		<hr />
+	</div>
+
+
+	<div class="row">
+
+		<h2>NETFLIX HISTORY</h2>
+		<div class="flex">
+			<div class="f1">
+				<p>Transaction ID : </p>
+				<p>Role ID : </p>
+				<p>User Name : </p>
+				<p>Paid Time : </p>
+				<p>Transaction Status : </p>
+				<p>Billing Address : </p>
+				<p>Total : </p>
+			</div>
+			<div class="f2">
+				<p id="RoleID">@Model.TransactionId</p>
+				<p>@Model.RoleID</p>
+				<p>@Model.Name</p>
+				<p>@Model.PaidTime</p>
+				<p>@Model.TransactionStatus</p>
+				<p>@Model.BillingAddress</p>
+				<p>RM @Model.Total.ToString("0.00")</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<h2>NETFLIX MOVIE</h2>
+	</div>
+
+	<div class="row_posters_my">
+		<div class="flex" id="Anime">
+		</div>
+	</div>
+
+	<div class="btn">
+		<a class="b1" href="~/Loading/Loading_Login_User_Tr" id="b1">Back</a>
+		<button class="b1 b2" onclick="loadPrint()" id="b2">Print</button>
+	</div>
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+
+		function loadPrint() {
+			b1.style.display = "none";
+			b2.style.display = "none";
+			window.print();
+			b1.style.display = "block";
+			b2.style.display = "block";
+		}
+
+			$(function(){
+
+				$.ajax({
+
+					type:"POST",
+					url:"/Ajax/GetTr_View",
+					dataType:"json",
+					data:{
+						RoleID:$("#RoleID").html()
+					},
+					success:function(data){
+						$.each(data,function(x,y){
+
+							var mimg = y.movieImg;
+							var m = mimg.slice(-5)
+							var movieimg = "";
+							if(m.includes(".jpg") || m.includes(".webp") || m.includes(".jpeg") || m.includes(".png")){
+								movieimg = `<img class="gs-product-card-image" src="/Image/MovieImg/${y.movieImg}">`;
+							}else{
+								movieimg = `<img class="gs-product-card-image" src="${y.movieImg}">`;
+							}
+
+							$("#Anime").append(`
+
+							<div class="my_turn">
+									<div class="gs-product-card">
+										<div class="gs-product-card-content">
+											<div class="gs-product-card-image-container">
+												${movieimg}
+											</div>
+											<div class="gs-product-card-save">
+												<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">    <path d="M 6 2 C 5.861875 2 5.7278809 2.0143848 5.5976562 2.0410156 C 4.686084 2.2274316 4 3.033125 4 4 L 4 22 L 12 19 L 20 22 L 20 4 C 20 3.8625 19.985742 3.7275391 19.958984 3.5976562 C 19.799199 2.8163086 19.183691 2.2008008 18.402344 2.0410156 C 18.272119 2.0143848 18.138125 2 18 2 L 6 2 z"></path></svg>
+											</div>
+											<div class="gs-product-card-name">${y.movieName}</div>
+											<div class="gs-product-card-detail">
+												<div class="gs-product-card-detail-title">Movie ID:</div>
+												<div class="gs-product-card-detail-value">${y.movieID}</div>
+											</div>
+											<div class="gs-product-card-detail">
+												<div class="gs-product-card-detail-title">Price:</div>
+												<div class="gs-product-card-detail-value">RM ${y.moviePrice.toFixed(2)}</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							`)
+						})
+
+					}
+
+
+				})
+
+
+			})
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

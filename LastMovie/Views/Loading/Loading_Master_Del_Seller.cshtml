@@ -1,0 +1,80 @@
+﻿@{
+	ViewData["Title"] = "Loading_Master_Del_Seller";
+	Layout = null;
+}
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: "Ubuntu", sans-serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.bg {
+		background: url("https://images6.alphacoders.com/648/thumb-1920-648603.jpg") no-repeat center center/cover;
+		position: absolute;
+		top: -30px;
+		left: -30px;
+		width: calc(100vw + 60px);
+		height: calc(100vh + 60px);
+		z-index: -1;
+		filter: blur(0px);
+	}
+
+	.loading-text {
+		font-size: calc(50 / 16 * 1rem);
+		color: #fff;
+	}
+</style>
+
+<section class="bg"></section>
+<div class="loading-text">0%</div>
+
+
+<script>
+
+	const loadText = document.querySelector(".loading-text");
+	const bg = document.querySelector(".bg");
+
+	let load = 0;
+
+	let int = setInterval(blurring, 100);
+
+	function blurring() {
+	  load++;
+
+	  if (load > 99) {
+		clearInterval(int);
+	  }
+
+	  loadText.innerText = `${load}%`;
+	  loadText.style.opacity = scale(load, 0, 100, 1, 0);
+	  bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
+	}
+
+	const scale = (num, in_min, in_max, out_min, out_max) => {
+	  return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+	};
+
+
+	function countDown(){
+
+		window.location.href="/Master/Master_Seller";
+
+	}
+
+	//1000毫秒调用一次
+	window.setInterval("countDown()",11000);
+</script>
+
+
+

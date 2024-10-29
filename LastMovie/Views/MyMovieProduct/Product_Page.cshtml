@@ -1,0 +1,507 @@
+﻿@model MovieProduct
+
+@{
+	ViewData["Title"] = "Product_Page";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+<style>
+	@@import url(https://fonts.googleapis.com/css?family=Fira+Sans:200,400,500,600,700|Plaster);
+
+	html {
+		margin-bottom: 0;
+	}
+
+	body {
+		/*margin: 0;*/
+		color: #e5dada;
+		overflow-x: hidden;
+		background-color: black;
+	}
+
+		body::-webkit-scrollbar {
+			width: 8px;
+		}
+
+		body::-webkit-scrollbar-track {
+			background: black;
+		}
+
+		body::-webkit-scrollbar-thumb {
+			background: #454545;
+			border-radius: 3px;
+		}
+
+			body::-webkit-scrollbar-thumb:hover {
+				background: grey;
+			}
+
+	h1, h2, h3, h4, h5, p {
+		cursor: default;
+	}
+
+	.video-page {
+		width: 100%;
+		margin: auto;
+		min-height: 80vh;
+		background: red;
+	}
+
+		.video-page .video-page-header {
+			width: 100%;
+			min-height: 600px;
+			position: relative;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 100%);
+			display: flex;
+		}
+
+			.video-page .video-page-header:before {
+				content: 34;
+				background: url(https://images.gr-assets.com/books/1348134701l/129984.jpg);
+				background-size: cover;
+				background-position: center;
+				position: absolute;
+				top: 0;
+				height: 98%;
+				filter: blur(8px);
+				width: 100%;
+				z-index: -1;
+			}
+
+			.video-page .video-page-header .video-description {
+				width: 100%;
+				max-width: 1000px;
+				margin: auto;
+				display: flex;
+			}
+
+				.video-page .video-page-header .video-description .header-left {
+					width: 100%;
+					height: 300px;
+					/*overflow: hidden;*/
+					border-radius: 5px;
+				}
+
+					.video-page .video-page-header .video-description .header-left img {
+						/*border-radius: 0.25rem;*/
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+
+					.video-page .video-page-header .video-description .header-left .my-list {
+						border-radius: 0.25rem;
+						padding: 10px 15px;
+						display: flex;
+						align-items: center;
+						cursor: pointer;
+						transition: all 0.5s;
+						border: 2px solid #e5dada;
+						margin-top: 20px;
+						text-transform: uppercase;
+						width: 160px;
+					}
+
+						.video-page .video-page-header .video-description .header-left .my-list:hover {
+							/*background-color: #e59500;*/
+							border: 2px solid red;
+							background: red;
+							box-shadow: 0 0 20px red, 0 0 60px red;
+							color: white;
+						}
+
+						.video-page .video-page-header .video-description .header-left .my-list i {
+							margin-right: 10px;
+						}
+
+				.video-page .video-page-header .video-description .header-right {
+					width: 60%;
+					flex: 60%;
+					padding: 1rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+				}
+
+					.video-page .video-page-header .video-description .header-right h1 {
+						margin-bottom: 0;
+					}
+
+					.video-page .video-page-header .video-description .header-right h2 {
+						font-size: 20px;
+						margin: 0;
+						padding: 0;
+					}
+
+						.video-page .video-page-header .video-description .header-right h2 span {
+							margin-left: 10px;
+							color: #454545;
+							font-weight: bold;
+						}
+
+					.video-page .video-page-header .video-description .header-right p {
+						color: #888;
+					}
+
+					.video-page .video-page-header .video-description .header-right .info {
+						display: flex;
+						align-items: flex-end;
+						/*color: #454545;*/
+						color: white;
+					}
+
+						.video-page .video-page-header .video-description .header-right .info h4, .video-page .video-page-header .video-description .header-right .info h5 {
+							margin: 0;
+							font-size: 18px;
+						}
+
+						.video-page .video-page-header .video-description .header-right .info h4 {
+							display: flex;
+							align-items: flex-start;
+						}
+
+						.video-page .video-page-header .video-description .header-right .info h5 {
+							font-weight: normal;
+							margin-left: 10px;
+							margin-top: 10px;
+						}
+
+					.video-page .video-page-header .video-description .header-right .rating {
+						width: 40px;
+						border-radius: 0.25rem;
+						margin-bottom: 20px;
+						padding: 5px 10px;
+						background-color: rgba(132, 0, 50, 0.8);
+					}
+
+		.video-page .mybox .streaming-container {
+			width: 100%;
+			max-width: 1000px;
+			margin: 0 auto 40px auto;
+			position: relative;
+		}
+
+			.video-page .mybox .streaming-container img {
+				width: 100%;
+			}
+
+			.video-page .mybox .streaming-container:after {
+				content: 34;
+				top: 0;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.6);
+			}
+
+			.video-page .mybox .streaming-container .streaming-play {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 70px;
+				z-index: 2;
+				color: #454545;
+			}
+
+				.video-page .mybox .streaming-container .streaming-play i {
+					cursor: pointer;
+					transition: all 0.5s;
+				}
+
+					.video-page .mybox .streaming-container .streaming-play i:hover {
+						color: #e5dada;
+					}
+
+		.video-page .mybox .comments-container {
+			width: 100%;
+			max-width: 1000px;
+			margin: auto;
+			border-top: 2px solid #454545;
+		}
+
+			.video-page .mybox .comments-container h1 {
+				font-size: 25px;
+				margin-bottom: 30px;
+				color: #454545;
+				font-weight: normal;
+			}
+
+			.video-page .mybox .comments-container .comnum {
+				color: white;
+			}
+
+			.video-page .mybox .comments-container .profile-img {
+				width: 50px;
+				height: 50px;
+				border-radius: 0.25rem;
+				object-fit: cover;
+			}
+
+			.video-page .mybox .comments-container .one-comment {
+				display: flex;
+				margin-bottom: 20px;
+			}
+
+				.video-page .mybox .comments-container .one-comment .comment-content {
+					margin-left: 10px;
+					padding-top: 5px;
+				}
+
+					.video-page .mybox .comments-container .one-comment .comment-content h4 {
+						margin: 0;
+					}
+
+						.video-page .mybox .comments-container .one-comment .comment-content h4 span {
+							color: #454545;
+							margin-left: 10px;
+						}
+
+					.video-page .mybox .comments-container .one-comment .comment-content p {
+						margin: 0;
+						margin-top: 10px;
+						color: #888;
+					}
+
+			.video-page .mybox .comments-container .add-comment {
+				display: flex;
+			}
+
+				.video-page .mybox .comments-container .add-comment .submit-comment {
+					margin-left: 10px;
+					display: flex;
+					flex-direction: column;
+					flex-grow: 1;
+				}
+
+					.video-page .mybox .comments-container .add-comment .submit-comment input {
+						background: transparent;
+						border: 0;
+						border-bottom: 1px solid #454545;
+						font-family: 39;
+						font-size: 15px;
+						color: #e5dada;
+						padding: 5px 0;
+						transition: all 0.5s;
+					}
+
+						.video-page .mybox .comments-container .add-comment .submit-comment input:focus {
+							border-bottom: 1px solid #e5dada;
+							outline: none;
+						}
+
+					.video-page .mybox .comments-container .add-comment .submit-comment .submit {
+						font-size: 15px;
+						padding: 5px 10px;
+						border-radius: 0.25rem;
+						align-self: flex-end;
+						cursor: pointer;
+						color: #888;
+						transition: all 0.5s;
+					}
+
+						.video-page .mybox .comments-container .add-comment .submit-comment .submit:hover {
+							color: #e59500;
+						}
+
+		.video-page .mybox {
+			background: black;
+			padding: 1rem;
+			padding-bottom: 1rem;
+		}
+
+	.portfolio-container {
+		display: flex;
+		background: #000000;
+		padding-bottom: 2rem;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.box_left {
+		margin: 1rem;
+	}
+
+</style>
+
+
+<div class="video-page">
+	<div class="video-page-header">
+		<div class="video-description">
+			<div class="header-left">
+
+				@{
+					var mimg = @Model.MovieImg;
+					string m = mimg.Remove(0, mimg.Length - 5);
+
+					string[] s = @Model.MovieImg.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+				}
+
+				@if (m.Contains(".jpg") || m.Contains(".webp") || m.Contains(".jpeg") || m.Contains(".png"))
+				{
+					<img src="~/Image/MovieImg/@Model.MovieImg">
+				}
+				else
+				{
+					<img src="@Model.MovieImg">
+				}
+				<button class="my-list" id="AddtoCart" value="@Model.Movie_ID">
+					<i class="fas fa-check"></i> Add to Cart
+				</button>
+			</div>
+			<div class="header-right">
+				<h1>@Model.MovieName</h1>
+				<p>@Model.MovieInfo</p>
+				<div class='info'>
+					<h4>Price:</h4>
+					<h5>RM @Model.MoviePrice.ToString("0.00")</h5>
+				</div>
+				<div class='info'>
+					<h4>Genres:</h4>
+					<h5>@Model.Category</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class='portfolio'>
+
+		<div class='portfolio-container'>
+
+			@{
+				string[] mlist = Model.ImgList.Split('|');
+			}
+			@foreach (var i in mlist)
+			{
+				<a href='~/Image/MovieImg/@i' class='box_left'>
+					<div class='image'>
+						<img src='~/Image/MovieImg/@i' alt='' width='250'>
+					</div>
+				</a>
+			}
+
+		</div>
+	</section>
+
+	<div class="mybox">
+		<div class="streaming-container">
+			<iframe src="@ViewBag.Video"
+					width="956" height="538"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+		</div>
+		<div class="comments-container">
+			<h1 id="comnum" class="comnum"></h1>
+			<div class="add-comment">
+				<img class="profile-img" src="~/Image/UserHead/@ViewBag.Head">
+				<div class="submit-comment">
+					<input type="text" id="mytext" placeholder="Add Comment">
+					<div class="submit" id="submitbbtt">Comment</div>
+				</div>
+			</div>
+
+			<div class="com" id="com">
+			</div>
+
+
+		</div>
+	</div>
+
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+	lightGallery(document.querySelector('.portfolio .portfolio-container'));
+
+	$(function () {
+
+		$("#AddtoCart").click(function () {
+
+			$.ajax({
+				type: "POST",
+				url: "/Ajax/AddMovieToCart",
+				dataType: "json",
+				data: {
+					ProductID: $(this).val()
+				},
+				success: function (data) {
+					if (data == true) {
+						window.location.href = "/User/User_Cart_Page";
+					} else if (data == "Installment") {
+						window.location.href = "/Loading/Loading_Login_User_Installment";
+					}
+				}
+			})
+		})
+
+		$.ajax({
+			type: "GET",
+			url: `/Ajax/GetComment?MovieID=${$("#AddtoCart").val()}`,
+			dataType: "json",
+			success: function (data) {
+
+				$("#comnum").html(`${data.length} Comments`)
+
+				$.each(data, function (x, y) {
+					$("#com").append(`
+
+							<div class="one-comment">
+								<img class="profile-img" src="/Image/UserHead/${y.head}">
+								<div class='comment-content'>
+									<h4>${y.user_Name}<span>${y.createdDate}</span></h4>
+									<p>${y.commentWord}</p>
+								</div>
+							</div>
+						`)
+				})
+			}
+		})
+
+		$("#submitbbtt").click(function () {
+
+			if ($("#mytext").val() != "") {
+				$.ajax({
+
+					type: "POST",
+					url: "/Ajax/CommentPost",
+					dataType: "json",
+					data: {
+						MovieID: $("#AddtoCart").val(),
+						Comment: $("#mytext").val()
+					},
+					success: function (data) {
+						$("#com").empty();
+						$("#mytext").val("")
+						$("#comnum").html(`${data.length} Comments`)
+						$.each(data, function (x, y) {
+							$("#com").append(`
+
+									<div class="one-comment">
+										<img class="profile-img" src="/Image/UserHead/${y.head}">
+										<div class='comment-content'>
+											<h4>${y.user_Name}<span>${y.createdDate}</span></h4>
+											<p>${y.commentWord}</p>
+										</div>
+									</div>
+								`)
+						})
+
+					}
+
+
+				})
+			}
+
+
+		})
+
+
+	})
+
+
+</script>

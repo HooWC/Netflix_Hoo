@@ -1,0 +1,361 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LastMovie
+build_property.RootNamespace = LastMovie
+build_property.ProjectDir = D:\仓库\coding\LastMovie\LastMovie\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\仓库\coding\LastMovie\LastMovie
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Contact/ContactUsPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxDb250YWN0VXNQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0hvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Login_Seller.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0xvZ2luX1NlbGxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Login_Seller_AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0xvZ2luX1NlbGxlcl9BZGRQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Login_Seller_AddSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0xvZ2luX1NlbGxlcl9BZGRTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Login_Seller_Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0xvZ2luX1NlbGxlcl9Qcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Login_User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0xvZ2luX1VzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Login_User_Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0xvZ2luX1VzZXJfQ2FydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Login_User_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0xvZ2luX1VzZXJfRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Login_User_Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0xvZ2luX1VzZXJfSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Login_User_Installment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0xvZ2luX1VzZXJfSW5zdGFsbG1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Login_User_Message.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0xvZ2luX1VzZXJfTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Login_User_Tr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX0xvZ2luX1VzZXJfVHIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_All_Message.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9BbGxfTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_Analysis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9BbmFseXNpcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_Comment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9Db21tZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_Del_Seller.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9EZWxfU2VsbGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_Del_User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9EZWxfVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9Ib21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_Message.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9NZXNzYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_MyProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9NeVByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_New_Movie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9OZXdfTW92aWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_Seller.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9TZWxsZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_Seller_Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9TZWxsZXJfUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Master_User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX01hc3Rlcl9Vc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Product_Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX1Byb2R1Y3RfSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Product_List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX1Byb2R1Y3RfTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Seller.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX1NlbGxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Seller_Message.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX1NlbGxlcl9NZXNzYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX1NpZ25Jbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Loading/Loading_Sign_Out.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZGluZ1xMb2FkaW5nX1NpZ25fT3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Login/LoginPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Login/SignUpPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnblVwUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Edit_User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXEVkaXRfVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_Add_Movie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9BZGRfTW92aWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_All_Message.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9BbGxfTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_Analyze.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9BbmFseXplLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_Analyze_Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9BbmFseXplX1Byb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_Analyze_Pro_Product_Price.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9BbmFseXplX1Byb19Qcm9kdWN0X1ByaWNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_Analyze_Seller.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9BbmFseXplX1NlbGxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_Analyze_User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9BbmFseXplX1VzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_Comment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9Db21tZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9Ib21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_Message.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9NZXNzYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_MyProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9NeVByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_MyProduct_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9NeVByb2R1Y3RfRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_Seller.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9TZWxsZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_seller_Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9zZWxsZXJfUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Master/Master_User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXE1hc3Rlcl9Vc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/MyHomeMovie/HomePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlIb21lTW92aWVcSG9tZVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/MyHomeMovie/Home_Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlIb21lTW92aWVcSG9tZV9Ib21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/MyMovieProduct/Product_Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlNb3ZpZVByb2R1Y3RcUHJvZHVjdF9Ib21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/MyMovieProduct/Product_List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlNb3ZpZVByb2R1Y3RcUHJvZHVjdF9MaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/MyMovieProduct/Product_Page.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlNb3ZpZVByb2R1Y3RcUHJvZHVjdF9QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Seller/Seller_AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsbGVyXFNlbGxlcl9BZGRQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Seller/Seller_Edit_Page.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsbGVyXFNlbGxlcl9FZGl0X1BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Seller/Seller_Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsbGVyXFNlbGxlcl9Ib21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Seller/Seller_Message_Page.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsbGVyXFNlbGxlcl9NZXNzYWdlX1BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Seller/Seller_Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsbGVyXFNlbGxlcl9Qcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Seller/Seller_Product_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsbGVyXFNlbGxlcl9Qcm9kdWN0X0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Shared/Home_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWVfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Shared/Loading_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExvYWRpbmdfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Shared/Master_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1hc3Rlcl9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Shared/Seller_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNlbGxlcl9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Shared/User_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVzZXJfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Shared/Welcome_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFdlbGNvbWVfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/User/UserPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/User/User_Cart_Buy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyX0NhcnRfQnV5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/User/User_Cart_Page.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyX0NhcnRfUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/User/User_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyX0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/User/User_ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyX0ZvcmdvdFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/User/User_Installment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyX0luc3RhbGxtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/User/User_Installment_Pay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyX0luc3RhbGxtZW50X1BheS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/User/User_Installment_View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyX0luc3RhbGxtZW50X1ZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/User/User_Message_Page.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyX01lc3NhZ2VfUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/User/User_Tr_Page.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyX1RyX1BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/User/User_Tr_Page_View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyX1RyX1BhZ2VfVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/仓库/coding/LastMovie/LastMovie/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-c2d4bdd5c8

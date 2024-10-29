@@ -1,0 +1,1428 @@
+﻿@{
+	ViewData["Title"] = "User_Cart_Page";
+	Layout = "User_Layout";
+}
+
+<style>
+	* {
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: #111;
+		overflow-x: hidden;
+	}
+
+	.row_poster {
+		width: 100%;
+		object-fit: contain;
+		max-height: 100px;
+		margin-right: 10px;
+		transition: transform 450ms;
+	}
+
+		.row_poster:hover {
+			transform: scale(1.1);
+		}
+
+	.row_posters {
+		display: flex;
+		overflow-y: hidden;
+		overflow-x: scroll;
+		padding: 20px;
+	}
+
+		.row_posters::-webkit-scrollbar {
+			display: none;
+		}
+
+	.row_posterLarge {
+		max-height: 200px;
+	}
+
+	.row {
+		color: antiquewhite;
+		margin-left: 20px;
+	}
+
+	.banner {
+		/*background-image: url("https://images.hdqwalls.com/download/lucifer-season-4-4k-tk-3840x2160.jpg");*/
+		background-image: url("https://occ-0-1841-58.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWr5SWlEWRCmcv6jWxE1Fmp_TuNOxNcuzDISPERpTmcWYLkSP7sH1ibGmQATt--i-UUG8tK-8Y31mhWd2wuB3A5p0XszEBDpL6g1.jpg?r=155");
+		width: 100%;
+		background-size: cover;
+		background-position: center center;
+		object-fit: contain;
+		/*	height: 448px;*/
+		color: azure;
+		/*margin-bottom: 2rem;*/
+	}
+
+	.banner_contents {
+		padding: 144px;
+		height: 100%;
+		background: linear-gradient(90deg,#181818 10%,hsla(0,0%,9%,.98) 20%,hsla(0,0%,9%,.97) 25%,hsla(0,0%,9%,.95) 35%,hsla(0,0%,9%,.94) 40%,hsla(0,0%,9%,.92) 45%,hsla(0,0%,9%,.9) 50%,hsla(0,0%,9%,.87) 55%,hsla(0,0%,9%,.82) 60%,hsla(0,0%,9%,.75) 65%,hsla(0,0%,9%,.63) 70%,hsla(0,0%,9%,.45) 75%,hsla(0,0%,9%,.27) 80%,hsla(0,0%,9%,.15) 85%,hsla(0,0%,9%,.08) 90%,hsla(0,0%,9%,.03) 95%,hsla(0,0%,9%,0));
+	}
+
+	.banner_title {
+		font-size: 3rem;
+		font-weight: 800;
+		padding-bottom: 0.3rem;
+	}
+
+	.banner_contents i {
+		color: red;
+		margin-right: 1rem;
+	}
+
+	.banner_discription {
+		width: 45rem;
+		line-height: 1.3;
+		padding-top: 1rem;
+		font-size: .8rem;
+		max-width: 360px;
+		height: 180px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.banner_button {
+		cursor: pointer;
+		color: azure;
+		outline: none;
+		border: none;
+		padding-top: .6rem;
+		padding-bottom: .4rem;
+		margin: .2rem;
+		font-weight: 700;
+		border-radius: 5px;
+		background-color: rgba(51, 51, 51, .5);
+	}
+
+		.banner_button:hover {
+			color: #000;
+			background-color: #e6e6e6;
+			transition: all 0.5s;
+		}
+
+	.nav2_logo {
+		width: 80px;
+		object-fit: contain;
+		cursor: pointer;
+	}
+
+	.nav2_avatar {
+		width: 30px;
+		object-fit: contain;
+		cursor: pointer;
+	}
+
+	.nav2 {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		padding: 20px;
+		z-index: 1;
+		transition-timing-function: ease-in;
+		transition: all 0.5s;
+	}
+
+	.nav2_black {
+		background-color: #111;
+	}
+
+	a {
+		color: azure;
+		text-decoration: none;
+	}
+
+		a:hover {
+			cursor: pointer;
+			color: black;
+			transition: all 0.5s;
+		}
+
+	.Mybackground {
+		background-color: #111;
+		padding: 0rem;
+	}
+
+	:root {
+		--background-color-gs-product-grid-view: #101827;
+		--product-column-gap-gs-product-grid-view: 10px;
+		--product-row-gap-gs-product-grid-view: 10px;
+		--product-container-padding-product-grid-view: 20px;
+		--product-card-color-gs-product-grid-view: #1d283c;
+		--product-card-border-radius-gs-product-grid-view: 5px;
+		--product-card-content-padding-gs-product-grid-view: 10px;
+		--product-card-scale-on-hover-gs-product-grid-view: 1.03;
+		--product-card-transition-gs-product-grid-view: 0.3s;
+		--product-card-header-color-gs-product-grid-view: white;
+		--product-card-header-padding-color-gs-product-grid-view: 20px 0px 10px 0px;
+		--product-card-header-font-gs-product-grid-view: 18px;
+		--product-card-detail-title-color-gs-product-grid-view: #9da1aa;
+		--product-card-detail-font-size-gs-product-grid-view: 13px;
+		--product-card-detail-value-color-gs-product-grid-view: white;
+		--product-overlay-background-color-gs-product-grid-view: #8080809c;
+		--product-overlay-text-color-gs-product-grid-view: white;
+		--product-overlay-background-color-hover-gs-product-grid-view: grey;
+		--product-card-scrollbar-color-gs-product-grid-view: #0a0f18;
+		--product-card-scrollbar-color-hover-gs-product-grid-view: black;
+		--product-card-image-height-hover-gs-product-grid-view: 150px;
+	}
+
+	* {
+		margin: 0;
+	}
+
+	.gs-product-grid-view-outer-container {
+		/*	background-color: var(--background-color-gs-product-grid-view);*/
+		/*min-height: 100vh;*/
+		min-height: 20vh;
+		width: 100%;
+		font-family: 'Poppins';
+	}
+
+	.gs-product-grid-view-container {
+		align-items: flex-start;
+		display: flex;
+		justify-content: center;
+		padding: var(--product-container-padding-product-grid-view);
+	}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div {
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+			grid-column-gap: var(--product-column-gap-gs-product-grid-view);
+			grid-row-gap: var(--product-row-gap-gs-product-grid-view);
+			max-width: 100%;
+			width: 100%;
+		}
+
+	@@media only screen and (min-width: 320px) {
+		.gs-product-grid-view-container .gs-product-grid-grid-div {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@@media only screen and (min-width: 540px) {
+		.gs-product-grid-view-container .gs-product-grid-grid-div {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@@media only screen and (min-width: 800px) {
+		.gs-product-grid-view-container .gs-product-grid-grid-div {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	@@media only screen and (min-width: 1024px) {
+		.gs-product-grid-view-container .gs-product-grid-grid-div {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+
+	@@media only screen and (min-width: 1900px) {
+		.gs-product-grid-view-container .gs-product-grid-grid-div {
+			grid-template-columns: repeat(6, 1fr);
+		}
+	}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card {
+		/*width: 100%;*/
+		min-width: 260px;
+		background-color: var(--product-card-color-gs-product-grid-view);
+		min-height: 400px;
+		max-height: 400px;
+		border-radius: var(--product-card-border-radius-gs-product-grid-view);
+		transition: var(--product-card-transition-gs-product-grid-view) ease-in-out;
+		display: block;
+		text-decoration: none;
+		cursor: pointer;
+		overflow-y: auto;
+	}
+
+
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card:hover {
+			transform: scale(var(--product-card-scale-on-hover-gs-product-grid-view));
+		}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .nocart {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .nocart:hover {
+			color: white;
+		}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content {
+		padding: var(--product-card-content-padding-gs-product-grid-view);
+		position: relative;
+	}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-image-container {
+		width: 100%;
+		height: var(--product-card-image-height-hover-gs-product-grid-view);
+		overflow: hidden;
+		border-radius: var(--product-card-border-radius-gs-product-grid-view);
+	}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-image-container .gs-product-card-image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-name {
+		color: var(--product-card-header-color-gs-product-grid-view);
+		padding: var(--product-card-header-padding-color-gs-product-grid-view);
+		font-size: var(--product-card-header-font-gs-product-grid-view);
+	}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 0.6rem;
+		font-size: var(--product-card-detail-font-size-gs-product-grid-view);
+	}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .no {
+			color: #59719d;
+			background-color: rgba(89, 113, 157, 0.2);
+			border: none;
+		}
+
+			.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .no:before {
+				background-color: #59719d;
+			}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .yes {
+			color: #2ba972;
+			background-color: rgba(43, 169, 114, 0.2);
+			border: none;
+		}
+
+			.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .yes:before {
+				background-color: #2ba972;
+			}
+
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .minus {
+			color: #59719d;
+			background-color: rgba(89, 113, 157, 0.2);
+			border: none;
+			transition: all .3s;
+		}
+
+			.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .minus:hover {
+				box-shadow: 0 0 20px rgba(89, 113, 157, 0.2), 0 0 60px rgba(89, 113, 157, 0.2);
+			}
+
+			.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .minus:before {
+				background-color: #59719d;
+			}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .add {
+			color: #2ba972;
+			background-color: rgba(43, 169, 114, 0.2);
+			border: none;
+			transition: all .3s;
+		}
+
+			.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .add:hover {
+				box-shadow: 0 0 20px rgba(43, 169, 114, 0.2), 0 0 60px rgba(43, 169, 114, 0.2);
+			}
+
+			.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .add:before {
+				background-color: #2ba972;
+			}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .delete {
+			color: #2ba972;
+			border: none;
+			background-color: red;
+			text-align: center;
+			transition: all .3s;
+		}
+
+			.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .delete:hover {
+				box-shadow: 0 0 20px red, 0 0 60px red;
+			}
+
+			.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .delete:before {
+				background-color: #2ba972;
+			}
+
+	@@media only screen and (min-width: 320px) {
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail {
+			display: block;
+		}
+	}
+
+	@@media only screen and (min-width: 540px) {
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail {
+			display: block;
+		}
+	}
+
+	@@media only screen and (min-width: 800px) {
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail {
+			display: flex;
+		}
+	}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .gs-product-card-detail-title {
+		color: var(--product-card-detail-title-color-gs-product-grid-view);
+		min-width: 50%;
+	}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .gs-product-card-detail-value {
+		color: var(--product-card-detail-value-color-gs-product-grid-view);
+		min-width: 50%;
+		text-align: left;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .mystatus {
+		color: var(--product-card-detail-value-color-gs-product-grid-view);
+		min-width: 30%;
+		text-align: center;
+		border-radius: 4px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 4px 8px;
+		font-size: 12px;
+	}
+
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-detail .mystatus:before {
+			content: 39;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			margin-right: 4px;
+		}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-product-type {
+		position: absolute;
+		top: calc(var(--product-card-content-padding-gs-product-grid-view) + 2px);
+		left: calc(var(--product-card-content-padding-gs-product-grid-view) + 2px);
+		padding: 0px 5px;
+		background-color: var(--product-overlay-background-color-gs-product-grid-view);
+		border-radius: 3px;
+		font-size: 10px;
+		color: var(--product-overlay-text-color-gs-product-grid-view);
+	}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-product-type:hover {
+			background-color: var(--product-overlay-background-color-hover-gs-product-grid-view);
+		}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-save {
+		position: absolute;
+		top: calc(var(--product-card-content-padding-gs-product-grid-view) + 2px);
+		right: calc(var(--product-card-content-padding-gs-product-grid-view) + 2px);
+		padding: 0px 5px;
+	}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-save svg {
+			fill: var(--product-overlay-background-color-gs-product-grid-view);
+			stroke: white;
+			stroke-width: 0.5px;
+			stroke-linejoin: round;
+		}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-save:hover svg {
+			fill: var(--product-overlay-background-color-hover-gs-product-grid-view);
+		}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-save.gs-saved svg {
+			fill: var(--product-card-color-gs-product-grid-view);
+		}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card .gs-product-card-content .gs-product-card-save.gs-saved:hover svg {
+			fill: var(--background-color-gs-product-grid-view);
+		}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card::-webkit-scrollbar {
+		width: 5px;
+		height: 5px;
+	}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card::-webkit-scrollbar-track {
+		background: transparent;
+		border-radius: 5px;
+	}
+
+	.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card::-webkit-scrollbar-thumb {
+		background: var(--product-card-scrollbar-color-gs-product-grid-view);
+		border-radius: 5px;
+	}
+
+		.gs-product-grid-view-container .gs-product-grid-grid-div .gs-product-card::-webkit-scrollbar-thumb:hover {
+			background: var(--product-card-scrollbar-color-hover-gs-product-grid-view);
+		}
+
+	.Mybackground .startProduct {
+		margin: 2rem auto 2rem auto;
+		width: 80%;
+		display: flex;
+		justify-content: center;
+	}
+
+		.Mybackground .startProduct a {
+			text-decoration: none;
+			width: 100%;
+			border-radius: 5px;
+			background: red;
+			color: white;
+			padding: 1rem 2rem;
+			text-align: center;
+			transition: all .3s;
+		}
+
+			.Mybackground .startProduct a:hover {
+				box-shadow: 0 0 20px red, 0 0 60px red;
+			}
+
+
+	/*a======================================================================*/
+
+
+	.cvvStyle {
+		margin-left: 88px;
+	}
+
+	.cvvStyle2 {
+		margin-left: 70px;
+	}
+
+	.card {
+		width: 100%;
+		max-width: 400px;
+		height: 178px;
+		position: relative;
+		margin: 0 auto;
+		overflow: hidden;
+		z-index: 1;
+		border-radius: 6px;
+		box-shadow: 0 15px 24px rgba(37, 44, 65, 0.32);
+		background: linear-gradient(90deg, #a9abae 35%, #e6e7e8 100%);
+	}
+
+	.card-content {
+		width: 100%;
+		padding: 20px;
+		position: relative;
+		float: left;
+		z-index: 1;
+	}
+
+	.infoTarjeta {
+		position: relative;
+		top: 45px;
+	}
+
+		.infoTarjeta h5 {
+			font-size: 12px;
+			color: #c9cdcf;
+			text-align: left;
+			text-transform: uppercase;
+		}
+
+		.infoTarjeta h6 {
+			font-size: 18px;
+			color: #fff;
+			text-align: left;
+			text-transform: uppercase;
+		}
+
+	input {
+		padding: 12px 20px 12px;
+		border: 3px solid #ddd;
+		margin-bottom: 12px;
+	}
+
+	.MakePy {
+		font-family: "Dax", Arial;
+		font-size: 14px;
+		transition: 0.2s;
+		border: none;
+		width: 100%;
+		height: 40px;
+		background-color: #a9abae;
+		color: black;
+		margin: 2px;
+		border-radius: 5px;
+		transition: all .3s;
+		text-align: center;
+	}
+
+		.MakePy:hover {
+			background-color: red;
+			color: white;
+			cursor: pointer;
+			box-shadow: 0 0 20px red, 0 0 60px red;
+		}
+
+	.imgResumen {
+		width: 100%;
+		max-height: 500px;
+		border-radius: 5px;
+	}
+
+	.logoFranquicia {
+		width: 70px;
+		float: right;
+	}
+
+	.column {
+		float: left;
+		width: 50%;
+	}
+
+	.myrow:after {
+		content: "";
+		display: table;
+		clear: both;
+		background: #111111;
+	}
+
+	.divPay {
+		border: none;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		width: 75%;
+		margin: auto;
+		padding-top: 2rem;
+		margin-bottom: 2rem;
+		border-radius: 10px;
+		text-align: center;
+		/*background: #c9cdcf;*/
+		height: 630px;
+		background: #111111;
+	}
+
+		.divPay h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 0;
+			line-height: 1.4;
+		}
+
+	.c1 {
+		background: #e6e7e8;
+		height: 500px;
+		padding: 10px;
+		border-radius: 10px 0px 0px 10px;
+		margin-bottom: 2rem;
+	}
+
+	.c2 {
+		background: #c9cdcf;
+		padding: 10px;
+		border-radius: 0px 10px 10px 0px;
+		/*	margin-bottom: 2rem;*/
+	}
+
+	.totalTxt {
+		position: relative;
+		top: 50px;
+	}
+
+		.totalTxt h1 {
+			color: lightcoral;
+			font-size: 1.5rem;
+			font-family: system-ui;
+		}
+
+	.MakePy {
+		position: relative;
+		top: 200px;
+		margin-top: 2rem;
+		font-family: "Dax", Arial;
+		font-size: 14px;
+		transition: 0.2s;
+		border: none;
+		width: 100%;
+		height: 40px;
+		background-color: #a9abae;
+		color: black;
+		margin: 2px;
+		border-radius: 5px;
+		transition: all .3s;
+	}
+
+		.MakePy:hover {
+			background-color: red;
+			color: white;
+			cursor: pointer;
+			box-shadow: 0 0 20px red, 0 0 60px red;
+		}
+
+	@@media screen and (max-width: 700px) {
+		.column,
+		.divPay {
+			width: 100%;
+		}
+
+		.totalTxt {
+			position: initial;
+		}
+
+		.c1,
+		.c2 {
+			min-height: 330px;
+			border-radius: 0px;
+		}
+	}
+
+	@@media screen and (max-width: 1200px) {
+		.divPay {
+			width: 90%;
+		}
+
+		.totalTxt {
+			position: initial;
+		}
+	}
+
+
+	.Mycheck[type=checkbox] + label {
+		display: block;
+		margin: 0.2em;
+		cursor: pointer;
+		padding: 0.2em;
+	}
+
+	.Mycheck[type=checkbox] {
+		display: none;
+	}
+
+		.Mycheck[type=checkbox] + label:before {
+			content: "\2714";
+			border: 0.1em solid #000;
+			border-radius: 0.2em;
+			display: inline-block;
+			width: 1.5em;
+			height: 1.5em;
+			margin-right: 0.2em;
+			color: transparent;
+			transition: .2s;
+			position: relative;
+			box-shadow: 0 0 40px yellow, 0 0 80px yellow;
+		}
+
+		.Mycheck[type=checkbox]:checked + label:before {
+			background-color: red;
+			border-color: red;
+			box-shadow: 0 0 20px red, 0 0 60px red;
+			color: #fff;
+			text-align: center;
+		}
+
+		.Mycheck[type=checkbox]:disabled + label:before {
+			/*transform: scale(1);*/
+			border-color: #aaa;
+		}
+
+		.Mycheck[type=checkbox]:checked:disabled + label:before {
+			/*transform: scale(1);*/
+			background-color: #bfb;
+			border-color: #bfb;
+		}
+
+	.my_box {
+		background: #111111;
+	}
+
+	:root {
+		--background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+		--gray: #34495e;
+		--darkgray: #2c3e50;
+	}
+
+	select {
+		/* Reset Select */
+		appearance: none;
+		outline: 0;
+		border: 0;
+		box-shadow: none;
+		/* Personalize */
+		flex: 1;
+		padding: 0 1em;
+		color: #fff;
+		background-color: var(--darkgray);
+		background-image: none;
+		cursor: pointer;
+	}
+		/* Remove IE arrow */
+		select::-ms-expand {
+			display: none;
+		}
+	/* Custom Select wrapper */
+	.select {
+		position: relative;
+		display: flex;
+		width: 5.5em;
+		height: 2em;
+		border-radius: .25em;
+		overflow: hidden;
+	}
+		/* Arrow */
+		.select::after {
+			content: '\25BC';
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 0.5em;
+			background-color: #34495e;
+			transition: .25s all ease;
+			pointer-events: none;
+		}
+		/* Transition */
+		.select:hover::after {
+			color: #f39c12;
+		}
+
+</style>
+
+<div class="Mybackground">
+
+	<!-- nav2igation section -->
+	<div class="nav2" id="nav2">
+		<img src="https://i.postimg.cc/fTPcTRWQ/netflix-logo.png" alt="" class="nav2_logo">
+		<img src="https://i.postimg.cc/Fszb4L4x/netflix-avatar.png" alt="" class="nav2_avatar">
+	</div>
+	<!-- banner section -->
+	<div class="banner">
+		<div class="banner_contents">
+			<h1 class="banner-title"><i class="fa-solid fa-triangle-exclamation"></i></i><span>Buy Carefully</span></h1>
+			<div class="banner_discription">
+				</a>
+				<br>
+				Here to remind you to think twice before buying, we are not responsible for any problems, please think twice before buying
+				<br><br>
+			</div>
+		</div>
+
+	</div>
+	<!-- Netflix Originals section -->
+	<div class="row">
+		<h2>NETFLIX - YOUR CART</h2>
+		<div class="row_posters">
+			<div class="row row-cols-4" id="Cart">
+			</div>
+		</div>
+
+		<!-- trending now section -->
+		<div class="row">
+			<h2>NETFLIX PAYMENT</h2>
+		</div>
+	</div>
+</div>
+
+<div class="my_box">
+	<div class="myrow divPay">
+		<div class="column c1">
+			<h2 style="margin-bottom: 10px;"><i class="fa-solid fa-triangle-exclamation" style="color:red;"></i> CONFIRM PRICE</h2>
+
+			<img src="https://c.tenor.com/QJNoPeq9WmUAAAAC/netflix-intro-netflix.gif" class="imgResumen">
+
+			<div class="totalTxt">
+				<h3 style="color: #a9abae">Total</h3>
+				<h1 id="TotalPrice"></h1>
+			</div>
+
+		</div>
+		<div class="column c1 c2">
+			<h2 style="margin-bottom: 10px;"><i class="fa-solid fa-triangle-exclamation" style="color:red;"></i> WARNING</h2>
+
+			<div class="gt">
+				<p style="color:red;">
+					Please reconfirm the product you want to buy before purchasing,
+					if you have any questions, you can ask us, we will not have any return
+				</p>
+			</div>
+
+			<div class="totalTxt">
+				<h3 style="color:#a9abae;">-- Summary --</h3>
+			</div>
+
+			<button class="MakePy" id="MakePy">Make payment</button>
+
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+	var Check = false;
+
+	var CartList = "";
+	var totalPrice = 0;
+	var cartnum = 0;
+
+	$(".mycart").css({
+		"background":"red",
+	  "border-radius":"5px",
+		"color":"white"
+	});
+
+
+	const nav2 = document.getElementById("nav2");
+	window.addEventListener('scroll', () => {
+		if(window.scrollY >= 100){
+		  nav2.classList.add('nav2_black')
+		}else{
+		  nav2.classList.remove('nav2_black');
+		}
+	})
+
+
+	$(function(){
+
+	  $.ajax({
+		type:"GET",
+		url:"/Ajax/GetCartInfo",
+		dataType:"json",
+		success:function(data){
+			if(data == false){
+				NoCart("Cart")
+			}else{
+				GetMovie(data,"Cart")
+			}
+		  }//success
+	  })//cart  ajax
+
+	  $("#pagarTarjetaNum").keyup(function(){
+		  if($(this).val() == "4242424242424242"){
+			   $("#pagarTarjetaNum").css("border","3px solid green")
+		  }else{
+			  $("#pagarTarjetaNum").css("border","3px solid red")
+		  }
+	  })
+
+	  $("#pagarTarjetaTit").keyup(function(){
+		  if($(this).val() == ""){
+			   $("#pagarTarjetaTit").css("border","3px solid red")
+		  }else{
+			  $("#pagarTarjetaTit").css("border","3px solid green")
+		  }
+	  })
+
+	   $("#pagarTarjetaMes").keyup(function(){
+		  if($(this).val() == ""){
+			   $("#pagarTarjetaMes").css("border","3px solid red")
+		  }else{
+			  $("#pagarTarjetaMes").css("border","3px solid green")
+		  }
+	  })
+
+	   $("#pagarTarjetaAno").keyup(function(){
+		  if($(this).val() == ""){
+			   $("#pagarTarjetaAno").css("border","3px solid red")
+		  }else{
+			  $("#pagarTarjetaAno").css("border","3px solid green")
+		  }
+	  })
+
+	   $("#pagarTarjetaCVV").keyup(function(){
+		  if($(this).val() == ""){
+			   $("#pagarTarjetaCVV").css("border","3px solid red")
+		  }else{
+			  $("#pagarTarjetaCVV").css("border","3px solid green")
+		  }
+	  })
+
+
+	  $("#MakePy").click(function(){
+		  var total = parseInt(totalPrice.toFixed(2));
+		  $.ajax({
+
+			  type:"POST",
+			  url:"/Ajax/MakeNewPY",
+			  dataType:"json",
+			  data:{
+				  TotalPricePost:total,
+				  CartListPost:CartList
+			  },
+			  success:function(data){
+				  if(data == true){
+					  window.location.href=`/User/User_Cart_Buy?Total=${totalPrice}`;
+				  }
+			  }
+
+		  })
+
+
+	  })
+
+	})//function
+
+	function NoCart(Name){
+		$("#" + Name).empty();
+		cartnum = 0;
+		$("#cartnum").html(cartnum)
+		$("#" + Name).append(`
+			<a href="/Loading/Loading_Product_Home">
+				<div class="gs-product-grid-view-outer-container">
+					<div class="gs-product-grid-view-container">
+					  <div class="gs-product-grid-grid-div">
+
+							<div class="gs-product-card nocart">
+								<h1><i class="fa-solid fa-square-plus"></i></h1>
+							</div>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</a>
+		  `)
+	}
+
+
+	function GetMovie(data,Name){
+		var m1 = 0;
+		var m2 = 0;
+		totalPrice = 0;
+
+		CartList = "";
+		$("#" + Name).empty();
+
+		cartnum = data.length;
+		$("#cartnum").html(cartnum)
+
+		$.each(data,function(x,y){
+
+			 if(y.isInstallmentProduct == true && y.installmentTime != 0 && y.isSelected == true){
+				$(".NoneInstallmentMycheck").prop('checked',false);
+				$(".NoneInstallmentMycheck").prop('disabled',true);
+				Check = true;
+				m1 = 1;
+			}
+			else if(y.isInstallmentProduct == true && y.installmentTime != 0 && y.isSelected == false){
+				Check = false;
+				m2 = 1;
+			}
+
+			if(m1 == 1 && m2 == 1){
+				$(".NoneInstallmentMycheck").prop('checked',false);
+				$(".NoneInstallmentMycheck").prop('disabled',true);
+				Check = true;
+			}else if(m1 == 0 && m2 == 1){
+				Check = false;
+			}else if(m1 == 1 && m2 ==0){
+				$(".NoneInstallmentMycheck").prop('checked',false);
+				$(".NoneInstallmentMycheck").prop('disabled',true);
+				Check = true;
+			}else if(m1 == 0 && m2 == 0){
+				Check = false;
+			}
+
+
+
+			var mimg = y.movieImg;
+			var m = mimg.slice(-5)
+			var movieimg = "";
+			if(m.includes(".jpg") || m.includes(".webp") || m.includes(".jpeg") || m.includes(".png")){
+				movieimg = `<img class="gs-product-card-image" src="/Image/MovieImg/${y.movieImg}">`;
+			}else{
+				movieimg = `<img class="gs-product-card-image" src="${y.movieImg}">`;
+			}
+
+			var CKEvent = "";
+			if(y.isInstallmentProduct == true && y.installmentTime != 0){
+				CKEvent = "InstallmentMycheck";
+			}
+			else if(y.isInstallmentProduct == false || y.installmentTime == 0)
+			{
+				CKEvent = "NoneInstallmentMycheck";
+			}
+
+			var Install = "";
+			var NewTotal = "";
+			if(y.isInstallmentProduct == true && y.installmentLastBuy == false){
+
+				if(y.installmentTime == 2){
+					Install = `<div class="select">
+							<select  id="${y.id}" class="myselected">
+								<option value="0">All</option>
+								<option value="2" selected>2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+							</div>`
+							NewTotal = `<div class="gs-product-card-detail-value">RM ${((y.moviePrice * y.lastQuantity) / y.installmentTime).toFixed(2)}</div>`
+
+				if(y.isSelected == true){
+					$(".NoneInstallmentMycheck").prop('checked',false);
+					$(".NoneInstallmentMycheck").prop('disabled',true);
+					Check = true;
+				}
+
+				}else if(y.installmentTime == 3){
+					Install = `<div class="select">
+							<select id="${y.id}" class="myselected">
+								<option value="0">All</option>
+								<option value="2">2</option>
+								<option value="3" selected>3</option>
+								<option value="4">4</option>
+							</select>
+							</div>`
+							NewTotal = `<div class="gs-product-card-detail-value">RM ${((y.moviePrice * y.lastQuantity) / y.installmentTime).toFixed(2)}</div>`
+				if(y.isSelected == true){
+					$(".NoneInstallmentMycheck").prop('checked',false);
+					$(".NoneInstallmentMycheck").prop('disabled',true);
+					Check = true;
+				}
+				}else if(y.installmentTime == 4){
+					Install = `<div class="select">
+							<select  id="${y.id}" class="myselected">
+								<option value="0">All</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4" selected>4</option>
+							</select>
+							</div>`
+							NewTotal = `<div class="gs-product-card-detail-value">RM ${((y.moviePrice * y.lastQuantity) / y.installmentTime).toFixed(2)}</div>`
+				if(y.isSelected == true){
+					$(".NoneInstallmentMycheck").prop('checked',false);
+					$(".NoneInstallmentMycheck").prop('disabled',true);
+					Check = true;
+				}
+				}else{
+					Install = `<div class="select">
+							<select  id="${y.id}" class="myselected">
+								<option value="0" selected>All</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+							</div>`
+
+							NewTotal = `<div class="gs-product-card-detail-value">RM ${(y.moviePrice * y.lastQuantity).toFixed(2)}</div>`
+				}
+
+
+
+			}
+			else if(y.isInstallmentProduct == true && y.installmentLastBuy == true && y.installmentTime == 2){
+				Install = `<div class="select">
+							<select>
+							  <option value="2">2</option>
+							</select>
+							</div>`
+
+				NewTotal = `<div class="gs-product-card-detail-value">RM ${((y.moviePrice * y.lastQuantity) / y.installmentTime).toFixed(2)}</div>`
+			}else if(y.isInstallmentProduct == true && y.installmentLastBuy == true && y.installmentTime == 3){
+				Install = `<div class="select">
+							<select>
+							  <option value="3">3</option>
+							</select>
+							</div>`
+
+				NewTotal = `<div class="gs-product-card-detail-value">RM ${((y.moviePrice * y.lastQuantity) / y.installmentTime).toFixed(2)}</div>`
+			}else if(y.isInstallmentProduct == true && y.installmentLastBuy == true && y.installmentTime == 4){
+				Install = `<div class="select">
+							<select>
+							  <option value="4">4</option>
+							</select>
+							</div>`
+
+				NewTotal = `<div class="gs-product-card-detail-value">RM ${((y.moviePrice * y.lastQuantity) / y.installmentTime).toFixed(2)}</div>`
+			}else if(y.isInstallmentProduct == false && y.installmentTime == 0){
+				NewTotal = `<div class="gs-product-card-detail-value">RM ${(y.moviePrice * y.lastQuantity).toFixed(2)}</div>`
+			}
+
+			var selected = "";
+			if(y.isSelected == true){
+				selected = "checked";
+				CartList += y.id + "|"
+			}else{
+				selected = "";
+				var n = y.id + "|"
+				CartList = CartList.replace(n,"");
+			}
+
+			var minus = "";
+			var add = "";
+			var del = "";
+			if(y.installmentLastBuy == false)
+			{
+				minus = `<button class="gs-product-card-detail-value mystatus minus minuspro" id="minuspro" value="${y.id}">-</button>`;
+				add = `<button class="gs-product-card-detail-value mystatus add MyAddPro" id="MyAddPro" value="${y.id}">+</button>`;
+				del = `<button class="gs-product-card-detail-value mystatus delete mydelete" value="${y.id}">Delete</button>`;
+			}
+			else
+			{
+				minus = "";
+				add = "";
+				del = "";
+			}
+
+			if(y.isSelected == true && y.installmentTime == 0){
+				totalPrice += y.moviePrice * y.lastQuantity
+			}else if(y.isSelected == true && y.installmentTime == 2){
+				totalPrice += ((y.moviePrice * y.lastQuantity) / 2);
+			}else if(y.isSelected == true && y.installmentTime == 3){
+				totalPrice += (y.moviePrice * y.lastQuantity) / 3;
+			}else if(y.isSelected == true && y.installmentTime == 4){
+				totalPrice += (y.moviePrice * y.lastQuantity) / 4;
+			}
+
+
+			$("#" + Name).append(`
+				  <div class="gs-product-grid-view-outer-container">
+						<div class="gs-product-grid-view-container">
+						  <div class="gs-product-grid-grid-div">
+
+								<div class="gs-product-card">
+								  <div class="gs-product-card-content">
+										<div class="gs-product-card-image-container">
+										  ${movieimg}
+										</div>
+										<div class="gs-product-card-save">
+											<input class="Mycheck ${CKEvent}" type="checkbox" id="fruit${y.id}" name="fruit-${y.id}" value="${y.id}" ${selected}>
+											<label for="fruit${y.id}"></label>
+										</div>
+										<div class="gs-product-card-name">${y.movieName}</div>
+									  <div class="gs-product-card-detail">
+											<div class="gs-product-card-detail-title">Quantity:</div>
+										  <div class="gs-product-card-detail-value">${y.lastQuantity}</div>
+										</div>
+									  <div class="gs-product-card-detail">
+											<div class="gs-product-card-detail-title">Price:</div>
+										  <div class="gs-product-card-detail-value">RM ${y.moviePrice.toFixed(2)}</div>
+										</div>
+									  <div class="gs-product-card-detail">
+											<div class="gs-product-card-detail-title">Total:</div>
+											${NewTotal}
+										</div>
+									  <div class="gs-product-card-detail">
+											${minus}
+											${add}
+									</div>
+									<div class="gs-product-card-detail">
+										  <div class="gs-product-card-detail-title">${Install}</div>
+											${del}
+									  </div>
+									</div>
+							  </div>
+							</div>
+					  </div>
+					</div>
+
+		  `)
+
+
+
+
+		 })
+
+		if(Check == true){
+			$(".NoneInstallmentMycheck").prop('checked',false);
+			$(".NoneInstallmentMycheck").prop('disabled',true);
+		}
+
+		 $(".myselected").change(function(){
+
+			 var cla = $(this).attr("id")
+
+			 $.ajax({
+				 type:"POST",
+				 url:"/Ajax/InstallmentSelect",
+				 dataType:"json",
+				 data:{
+					 SelectValue:$(this).val(),
+					 ID:cla
+				 },
+				 success:function(data){
+					 GetMovie(data,"Cart")
+				 }
+			 })
+		 })
+
+
+
+		 $(".Mycheck").change(function(){
+			 var xx = "fruit"+$(this).val();
+			 var x = document.getElementById(xx)
+			 //查看
+			 //var tr = $(".NoneInstallmentMycheck").is(":checked");
+			 //alert(tr)
+
+				if(x.checked){
+					$("#Anime").prop("checked",true)
+					$.ajax({
+
+						type:"POST",
+						url:"/Ajax/CheckSelectCart",
+						dataType:"json",
+						data:{
+							Check:x.checked,
+							ID:$(this).val()
+						},
+						success:function(data){
+							if(data == false){
+								NoCart("Cart")
+							}else{
+								GetMovie(data,"Cart")
+							}
+						}
+
+
+					})
+
+
+				}else{
+					$("#Anime").prop("checked",false)
+					$.ajax({
+
+						type:"POST",
+						url:"/Ajax/CheckSelectCart",
+						dataType:"json",
+						data:{
+							Check:x.checked,
+							ID:$(this).val()
+						},
+						success:function(data){
+							if(data == false){
+								NoCart("Cart")
+							}else{
+								GetMovie(data,"Cart")
+							}
+						}
+				})
+				}
+		 })
+
+		 $(".minuspro").click(function(){
+
+		  $.ajax({
+			  type:"POST",
+			  url:"/Ajax/MinusPost",
+			  dataType:"json",
+			  data:{
+				  ID:$(this).val()
+			  },
+			  success:function(data){
+				if(data == false){
+					NoCart("Cart")
+				}else{
+					GetMovie(data,"Cart")
+				}
+			  }
+		  })
+
+		 })
+
+		$(".MyAddPro").click(function(){
+
+		  $.ajax({
+			  type:"POST",
+			  url:"/Ajax/AddPost",
+			  dataType:"json",
+			  data:{
+				  ID:$(this).val()
+			  },
+			  success:function(data){
+				  GetMovie(data,"Cart")
+			  }
+		  })
+
+		 })
+
+		  $(".mydelete").click(function(){
+
+			  $.ajax({
+				  type:"POST",
+				  url:"/Ajax/MyDelete",
+				  dataType:"json",
+				  data:{
+					  ID:$(this).val()
+				  },
+				  success:function(data){
+					if(data == false){
+						NoCart("Cart")
+					}else{
+						GetMovie(data,"Cart")
+					}
+				}
+			})
+		 })
+
+
+		 document.getElementById("TotalPrice").innerHTML = "RM " + totalPrice.toFixed(2);
+
+	}
+
+
+
+
+
+
+	function showCN() {
+			  var i = document.getElementById("pagarTarjetaNum").value;
+			  document.getElementById("cardNumber").innerHTML = i;
+
+			  if (i.includes("4242") == true) {
+				document.getElementById("imgFranchise").src =
+				  "https://brand.mastercard.com/content/dam/mccom/brandcenter/thumbnails/mastercard_vrt_pos_92px_2x.png";
+				document.getElementById("imgFranchise").style.display = "block";
+				document.getElementById("divCard").style.background =
+				  "linear-gradient(90deg, #E40003 35%, #A40000 100%)";
+			  } else if (i.includes("3333") == true) {
+				document.getElementById("imgFranchise").src =
+				  "https://usa.visa.com/dam/VCOM/regional/lac/ENG/Default/Partner%20With%20Us/Payment%20Technology/visapos/full-color-800x450.jpg";
+				document.getElementById("imgFranchise").style.display = "block";
+
+				document.getElementById("divCard").style.background =
+				  "linear-gradient(90deg, #FF8D00 35%, #FFA700 100%)";
+			  } else {
+				document.getElementById("imgFranchise").style.display = "none";
+
+				document.getElementById("divCard").style.background =
+				  "linear-gradient(90deg, #a9abae 35%, #e6e7e8 100%)";
+			  }
+
+			  if (i == "") {
+				document.getElementById("cardNumber").innerHTML = "0000 0000 0000 0000";
+			  }
+	}
+
+	function showCE() {
+	  var im = document.getElementById("pagarTarjetaMes").value;
+	  var iy = document.getElementById("pagarTarjetaAno").value;
+	  document.getElementById("cardMonth").innerHTML = im;
+			  document.getElementById("cardYear").innerHTML = iy;
+	}
+
+	function showCV() {
+	  var i = document.getElementById("pagarTarjetaCVV").value;
+	  document.getElementById("cardCVV").innerHTML = i;
+	}
+
+
+</script>
+
